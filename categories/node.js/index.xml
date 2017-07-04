@@ -16,10 +16,10 @@
     
     <item>
       <title>Weaselpecker v1.1.0 released and available on NPM</title>
-      <link>https://ottogiron.github.io/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/</link>
+      <link>https://ottogiron.github.io/2015/08/06/weaselpecker-v1.1.0-released-and-available-on-npm/</link>
       <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/</guid>
+      <guid>https://ottogiron.github.io/2015/08/06/weaselpecker-v1.1.0-released-and-available-on-npm/</guid>
       <description>I few months ago I wrote a little module for mocking Waterline models, you can check my related post here &amp;#8220;Weaselpecker: Node.js- Waterline Simple Mocking Library&amp;#8221;.
 It seems the module was useful for some developers (which is great 😀 ) so I took a few hours to review my code and add a couple extra features.
 I&amp;#8217;ve released v1.1.0 which is available on NPM https://www.npmjs.com/package/weaselpecker.
@@ -29,10 +29,10 @@ npm install weaselpecker --save-dev  Examples here https://github.</description>
     
     <item>
       <title>Node.js Modeshape REST Client</title>
-      <link>https://ottogiron.github.io/2015/04/12/node-js-modeshape-rest-client/</link>
+      <link>https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/04/12/node-js-modeshape-rest-client/</guid>
+      <guid>https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/</guid>
       <description>&lt;h2 id=&#34;modeshape&#34;&gt;Modeshape&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://modeshape.jboss.org/&#34; target=&#34;_blank&#34;&gt;Modeshape&lt;/a&gt; is an hierarchical data store written in Java and is part of the &lt;a href=&#34;http://www.jboss.org&#34; target=&#34;_blank&#34;&gt;JBoss&lt;/a&gt; portfolio . ModeShape clients are based on  &lt;a href =&#34;https://www.jcp.org/en/jsr/detail?id=283&#34; target=&#34;_blank&#34;&gt;JSR 283&lt;/a&gt; also known as JCR (Java Content Repository). There&amp;#8217;s another popular implementation of JCR called &lt;a href=&#34;http://jackrabbit.apache.org/jcr/index.html&#34; title=&#34;Jackrabbit&#34; target=&#34;_blank&#34;&gt;Jackrabbit&lt;/a&gt;, part of the Apache Software Foundation.&lt;/p&gt;
@@ -44,10 +44,10 @@ npm install weaselpecker --save-dev  Examples here https://github.</description>
     
     <item>
       <title>Node.js Code Coverage with Istanbul and Mocha</title>
-      <link>https://ottogiron.github.io/2015/03/29/node-js-code-coverage-with-istanbul-and-mocha/</link>
+      <link>https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/03/29/node-js-code-coverage-with-istanbul-and-mocha/</guid>
+      <guid>https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</guid>
       <description>&lt;p&gt;Code coverage is a measure of how much of your code has been  tested. Code coverage tools run a set of metrics in order to determine if your code has been completely tested, reducing the chance of  unwanted bugs.&lt;/p&gt;
 
 &lt;p&gt;You have to take into account that even if your code has 100% code coverage, that doesn&amp;#8217;t guarantee all your tests are correct, there are some logical bugs you might miss, but as with anything, practice will help you with that.&lt;/p&gt;
@@ -57,10 +57,10 @@ npm install weaselpecker --save-dev  Examples here https://github.</description>
     
     <item>
       <title>Setting Up your Node.js Unit Tests with Chai And Mocha</title>
-      <link>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</link>
+      <link>https://ottogiron.github.io/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</guid>
+      <guid>https://ottogiron.github.io/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/</guid>
       <description>&lt;p&gt;In this post I&amp;#8217;m going to list the steps for setting up a Node.js project with unit testing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -68,10 +68,10 @@ npm install weaselpecker --save-dev  Examples here https://github.</description>
     
     <item>
       <title>Waterline: Node.js adapter-based ORM</title>
-      <link>https://ottogiron.github.io/2015/03/16/waterline-node-js-adapter-based-orm/</link>
+      <link>https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/03/16/waterline-node-js-adapter-based-orm/</guid>
+      <guid>https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; is an ORM/ODM (Object Document Mapper), part of the &lt;a href=&#34;http://sailsjs.org&#34;&gt;Sails Framework&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.&lt;/p&gt;
@@ -81,10 +81,10 @@ npm install weaselpecker --save-dev  Examples here https://github.</description>
     
     <item>
       <title>Weaselpecker: Node.js- Waterline Simple Mocking Library</title>
-      <link>https://ottogiron.github.io/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</link>
+      <link>https://ottogiron.github.io/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</guid>
+      <guid>https://ottogiron.github.io/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/ottogiron/weaselpecker&#34;&gt;Weaselpecker&lt;/a&gt; is a small nodejs module I wrote for mocking &lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; models. His name is inspired in the famous and beloved weasel woodpecker rider.&lt;/p&gt;
 
 &lt;p style=&#34;text-align:center&#34;&gt;

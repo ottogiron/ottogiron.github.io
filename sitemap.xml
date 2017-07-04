@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/</loc>
-    <lastmod>2015-12-23T21:26:11-06:00</lastmod>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/</loc>
+    <loc>https://ottogiron.github.io/2015/08/06/weaselpecker-v1.1.0-released-and-available-on-npm/</loc>
     <lastmod>2015-08-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,37 +23,37 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/04/12/node-js-modeshape-rest-client/</loc>
+    <loc>https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/03/29/node-js-code-coverage-with-istanbul-and-mocha/</loc>
+    <loc>https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</loc>
+    <loc>https://ottogiron.github.io/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/03/16/waterline-node-js-adapter-based-orm/</loc>
+    <loc>https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</loc>
+    <loc>https://ottogiron.github.io/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2015/03/07/web-components/</loc>
+    <loc>https://ottogiron.github.io/2015/03/08/web-components/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/2014/07/20/apache-thrift-java-server-and-nodejs-client/</loc>
+    <loc>https://ottogiron.github.io/2014/07/21/apache-thrift-java-server-and-nodejs-client/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,20 +98,14 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/tags/css/</loc>
-    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ottogiron.github.io/categories/css/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/tags/devops/</loc>
-    <lastmod>2015-12-15T21:25:39-06:00</lastmod>
+    <loc>https://ottogiron.github.io/tags/css/</loc>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,8 +116,20 @@
   </url>
   
   <url>
+    <loc>https://ottogiron.github.io/tags/devops/</loc>
+    <lastmod>2015-12-15T21:25:39-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.github.io/categories/golang/</loc>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ottogiron.github.io/tags/golang/</loc>
-    <lastmod>2015-12-23T21:26:11-06:00</lastmod>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,26 +146,26 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/tags/java/</loc>
-    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ottogiron.github.io/categories/java/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/tags/javascript/</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.github.io/tags/java/</loc>
+    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ottogiron.github.io/categories/javascript/</loc>
     <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.github.io/tags/javascript/</loc>
+    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -188,14 +194,14 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/tags/node.js/</loc>
-    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.github.io/categories/node.js/</loc>
+    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.github.io/categories/node.js/</loc>
-    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.github.io/tags/node.js/</loc>
+    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -207,13 +213,19 @@
   
   <url>
     <loc>https://ottogiron.github.io/</loc>
-    <lastmod>2015-12-23T21:26:11-06:00</lastmod>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ottogiron.github.io/post/</loc>
-    <lastmod>2015-12-23T21:26:11-06:00</lastmod>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.github.io/categories/programming-languages/</loc>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

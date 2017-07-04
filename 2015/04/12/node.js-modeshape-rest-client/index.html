@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Node.js Modeshape REST Client  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="java, JavasScript, JCR, Modeshape, Node.js, ">
+
+
+<meta property="og:title" content="Node.js Modeshape REST Client  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-04-12T00:00:00Z" />
+<meta property="og:article:modified_time" content="2015-04-12T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="java">
+    
+<meta property="og:article:tag" content="JavasScript">
+    
+<meta property="og:article:tag" content="JCR">
+    
+<meta property="og:article:tag" content="Modeshape">
+    
+<meta property="og:article:tag" content="Node.js">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Node.js Modeshape REST Client" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Node.js Modeshape REST Client",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-04-12",
+    "description": "",
+    "wordCount": 409
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.24.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Node.js Modeshape REST Client
+</h1>
+
+  <div class="metas">
+<time datetime="2015-04-12">12 Apr, 2015</time>
+
+
+  
+    &middot; by ogiron
+  
+  &middot; Read in about 2 min
+  &middot; (409 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/java">java</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/javasscript">JavasScript</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/jcr">JCR</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/modeshape">Modeshape</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/node.js">Node.js</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <h2 id="modeshape">Modeshape</h2>
+
+<p><a href="http://modeshape.jboss.org/" target="_blank">Modeshape</a> is an hierarchical data store written in Java and is part of the <a href="http://www.jboss.org" target="_blank">JBoss</a> portfolio . ModeShape clients are based on  <a href ="https://www.jcp.org/en/jsr/detail?id=283" target="_blank">JSR 283</a> also known as JCR (Java Content Repository). There&#8217;s another popular implementation of JCR called <a href="http://jackrabbit.apache.org/jcr/index.html" title="Jackrabbit" target="_blank">Jackrabbit</a>, part of the Apache Software Foundation.</p>
+
+<p>Content Repositories such ModeShape are great for data organized in a tree like structure such Content Management Systems, Digital Assets Managers, Document Management Systems, Social Collaboration Systems etc.</p>
+
+<p></p>
+
+<p>Here&#8217;s a visualization of the default ModeShape data/content admin tool:</p>
+
+<p style="text-align:center">
+  <a style="text-align:center" href="http://i1.wp.com/ottogiron.me/wp-content/uploads/2015/04/mode-shape-repository.png"><img src="http://i1.wp.com/ottogiron.me/wp-content/uploads/2015/04/mode-shape-repository.png?w=474" alt="mode-shape-repository"   data-recalc-dims="1" /></a>
+</p>
+
+<h3 id="content-repository-features">Content Repository Features</h3>
+
+<ul>
+<li>Content Management (add/edit/delete).</li>
+<li>Hierarchy and sort order management</li>
+<li>Query/ search</li>
+<li>Versioning</li>
+<li>Access Control</li>
+<li>Workspace management.</li>
+</ul>
+
+<p>This is not a complete list but you can get an idea.</p>
+
+<h3 id="modeshape-8217-s-rest-service">ModeShape&#8217;s REST Service</h3>
+
+<p>ModeShape provides a <a href="https://docs.jboss.org/author/display/MODE40/REST+Service">REST API</a> that you can use to create and manage content using an HTTP client.</p>
+
+<h2 id="modeshape-node-js-rest-client">ModeShape Node.js REST Client</h2>
+
+<p><a href="https://github.com/ottogiron/modeshape-rest-client" target="_blank">ModeShapeRestClient</a> is a Node.js module I wrote which abstracts most of the ModeShape&#8217;s REST operations, for example; the creation of a single content node a binary file upload etc.</p>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="client-initialization">Client Initialization</h4>
+
+<pre class="brush: jscript; title: ; notranslate" title="">var ModeShapeRestClient = require('modeshape-rest-client');
+
+//creates a new instance of the client
+var client = ModeShapeRestClient({
+            user: 'admin',
+            password: 'admin',
+            repository: 'sample',
+            workspace: 'default'
+        });
+</pre>
+
+<p>You can also provide other parameters such protocol (maybe https), port and host, if you don&#8217;t, the client will use predefined defaults.</p>
+
+<h4 id="creating-a-new-node">Creating a new node</h4>
+
+<pre class="brush: jscript; title: ; notranslate" title="">var nodeDataToAdd = {
+            "jcr:primaryType":"nt:unstructured",
+            "testProperty":"testValue",
+            "multiValuedProperty":["value1", "value2"],
+            "children":{
+                "childNode":{
+                    "nestedProperty":"nestedValue"
+                }
+            }
+        };
+
+var path = '/test';
+var options = { path: path }
+client.addNode(options, nodeToAdd, function(err, createdNodeData) {
+       console.log(createdNodeData);
+});
+</pre>
+
+<p>The &#8220;createdNodeData&#8221; object should be similar to this:</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">{
+    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b5%5d",
+    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+    "id": "0a461a99-2a97-43b6-9e14-f30cbf01f399",
+    "jcr:primaryType": "nt:unstructured",
+    "multiValuedProperty": [
+        "value1",
+        "value2"
+    ],
+    "testProperty": "testValue",
+    "children": {
+        "childNode": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b5%5d/childNode",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b5%5d",
+            "id": "76858e3b-3868-407f-a164-13d3d694d20a"
+        }
+    }
+}
+</pre>
+
+<h4 id="uploading-a-binary-file">Uploading a Binary File</h4>
+
+<pre class="brush: jscript; title: ; notranslate" title="">var fs = require('fs');
+
+//..... client initialization here....
+var options = { path: '/testbinaryUpload' };
+//create a stream from a file
+var nodeStream = fs.createReadStream('binaryTest');
+client.uploadBinary(options, nodeStream, function(err , result) {
+    console.log(result);
+});
+</pre>
+
+<p>Please check additional examples here <a href="https://github.com/ottogiron/modeshape-rest-client/blob/master/test/index.js" target="_blank"><a href="https://github.com/ottogiron/modeshape-rest-client/blob/master/test/index.js">https://github.com/ottogiron/modeshape-rest-client/blob/master/test/index.js</a></a>.</p>
+
+<p>ModeShapeRestClient code is available here <a href="https://github.com/ottogiron/modeshape-rest-client" target="_blank"><a href="https://github.com/ottogiron/modeshape-rest-client">https://github.com/ottogiron/modeshape-rest-client</a></a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>ModeShape allows you to create applications that are centered around content which naturally fits in a hierarchical data structure, a great example of that is a Content Management System (check <a href="https://www.magnolia-cms.com" target="_blank">Magnolia CMS</a>). One of the ModeShape features is a great REST API that you can use in your favorite language with any HTTP client. ModeShapeRestClient is a Node.js module that makes the use of ModeShape REST API much easier.</p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/" title="Node.js Code Coverage with Istanbul and Mocha">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://ottogiron.github.io/2015/05/10/managing-your-javascript-dependencies-with-requirejs/" title="Managing your JavaScript Dependencies with RequireJS">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

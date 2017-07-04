@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Chapi Go Toy Web Framework  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="golang, ">
+
+
+<meta property="og:title" content="Chapi Go Toy Web Framework  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-12-23T00:00:00Z" />
+<meta property="og:article:modified_time" content="2015-12-23T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="golang">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Chapi Go Toy Web Framework" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Chapi Go Toy Web Framework",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-12-23",
+    "description": "",
+    "wordCount": 634
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.24.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Chapi Go Toy Web Framework
+</h1>
+
+  <div class="metas">
+<time datetime="2015-12-23">23 Dec, 2015</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 3 min
+  &middot; (634 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/golang">golang</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>On my quest of learning I heard about this relatively new language called <a href="https://golang.org/">go</a>. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: <a href="http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639">Programing in go</a></p>
+
+<p></p>
+
+<p>My first thought was to write a simple REST API but since I&rsquo;ve been working with Node <a href="http://hapijs.com/">hapijs</a>  lately I wondered if I could write a super simple framework inspired in the <a href="http://hapijs.com/">hapijs</a> plugin system which I really like.</p>
+
+<h2 id="chapi">Chapi</h2>
+
+<p>So <a href="https://github.com/ottogiron/chapi">Chapi</a> is a Toy Web Framework inspired in <a href="http://hapijs.com/">hapijs</a> (Almost chappie), so it basically implements a simple plugin system, routes using the <a href="http://www.gorillatoolkit.org/pkg/mux">gorilla mux</a>, and a server using <a href="https://github.com/codegangsta/negroni">negroni</a>.</p>
+
+<div style="text-align:center">
+<img  src="http://res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_400/v1450930257/ottogironme/chappie-window-sticker.jpg">
+</div>
+
+<h3 id="chapi-server">Chapi Server</h3>
+
+<p><strong>github.com/ottogiron/chapi/server.Sever</strong></p>
+
+<p>Chapi server allows you to easily create an http server, define routes, and register plugins.</p>
+
+<p>Creating a simple server:</p>
+
+<pre><code class="language-go">connectionString := &quot;:8080&quot;
+s := server.NewServer()
+err := s.Run(connectionString)
+if err != nil {
+  fmt.Println(&quot;Error when running server&quot;, err)
+}
+</code></pre>
+
+<h3 id="chapi-plugin">Chapi Plugin</h3>
+
+<p><strong>github.com/ottogiron/chapi/server.BasePlugin</strong></p>
+
+<p>Chapi implements a plugin systems which allows you to break your logic in multiple reusable pieces.</p>
+
+<h4 id="plugin-definition">Plugin Definition</h4>
+
+<p>This is how you define a plugin:</p>
+
+<pre><code class="language-go">type MyPlugin struct {
+    *server.BasePlugin
+}
+
+//Here you'll recieve a server reference
+func (p *MyPlugin) Register(s server.Server) {
+
+}
+
+//Unique plugin name (Optional)
+func (p *MyPlugin) Name() string {
+    return &quot;MyPlugin&quot;
+}
+
+//Array of plugins that should run before this one(Optional)
+func (p *MyPlugin) Dependencies() []string {
+    return []string{&quot;SomeDependencyPluginName&quot;}
+}
+</code></pre>
+
+<h4 id="registering-a-plugin">Registering a plugin</h4>
+
+<p>Assuming you&rsquo;ve already initialized a server &laquo;s&raquo;</p>
+
+<pre><code class="language-go">s.Register(&amp;MyPlugin{})
+</code></pre>
+
+<h3 id="chapi-routes">Chapi Routes</h3>
+
+<p>You can register route handlers using Chapi Server. It uses the same route syntax of <a href="http://www.gorillatoolkit.org/pkg/mux">gorilla mux</a></p>
+
+<pre><code class="language-go">s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<ul>
+<li><a href="https://golang.org/">go</a> =&gt; 1.5</li>
+</ul>
+
+<h4 id="creating-a-simple-server">Creating a simple server</h4>
+
+<p>Get Chapi:</p>
+
+<pre><code>go get github.com/ottogiron/chapi
+</code></pre>
+
+<p>Create a new directory:</p>
+
+<pre><code>mkdir $GOPATH/src/chapi-example
+cd chapi-example
+</code></pre>
+
+<p>Create a new file called main.go and paste this:</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+
+	&quot;github.com/ottogiron/chapi/server&quot;
+)
+
+func main() {
+
+	connectionString := &quot;:8080&quot;
+	s := server.NewServer()
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Run the server:</p>
+
+<pre><code>go run main.go
+</code></pre>
+
+<p>Go to <a href="http://localhost:8080">http://localhost:8080</a>. You should see something like this:</p>
+
+<pre><code>404 page not found
+</code></pre>
+
+<p>So don&rsquo;t worry everything is fine. The server is running on port 8080 but we still need to define a route to handle the root &laquo;/&raquo; path.</p>
+
+<h4 id="creating-a-controller-plugin-to-handle-the-root-path">Creating a controller plugin to handle the root path.</h4>
+
+<p>Add this after the import statement</p>
+
+<pre><code class="language-go">type HelloController struct {
+	*server.BasePlugin
+}
+
+func (c *HelloController) Register(s server.Server) {
+	s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+}
+
+func handleHello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, &quot;!!!Hello Chapi&quot;)
+}
+</code></pre>
+
+<p>Register HelloController Plugin:</p>
+
+<pre><code class="language-go">func main() {
+
+	connectionString := &quot;:8000&quot;
+	s := server.NewServer()
+	s.Register(&amp;HelloController{})
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Your final main.go should look something like this:</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;net/http&quot;
+
+	&quot;github.com/ottogiron/chapi/server&quot;
+)
+
+type HelloController struct {
+	*server.BasePlugin
+}
+
+func (c *HelloController) Register(s server.Server) {
+	s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+}
+
+func handleHello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, &quot;!!!Hello Chapi&quot;)
+}
+
+func main() {
+
+	connectionString := &quot;:8000&quot;
+	s := server.NewServer()
+	s.Register(&amp;HelloController{})
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Restart the server:</p>
+
+<p>press ctrl + c</p>
+
+<p>&hellip; and run it again:</p>
+
+<pre><code>go run main.go
+</code></pre>
+
+<p>Go to <a href="http://localhost:8080">http://localhost:8080</a>, you&rsquo;ll see something like this:</p>
+
+<pre><code>!!!Hello Chapi
+</code></pre>
+
+<h2 id="a-toy-web-framework">A Toy Web Framework ?</h2>
+
+<p>This is my first piece of go code, it doesn&rsquo;t have unit testing and it isn&rsquo;t the best example of go code style. At this point I have written some others tools using the language and I&rsquo;m still learning. Hopefully I&rsquo;ll find the time to get back to this project and improve it at some point.</p>
+
+<p><strong>The code for this example is available on github:</strong> <a href="https://github.com/ottogiron/chapi-example">https://github.com/ottogiron/chapi-example</a></p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2015/12/15/using-terraform-with-digitalocean/" title="Using Terraform with DigitalOcean">
+      Previous
+    </a>
+    
+
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

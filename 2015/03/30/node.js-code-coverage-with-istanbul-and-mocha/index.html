@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Node.js Code Coverage with Istanbul and Mocha  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="CodeCoverage, Istanbul, Mocha, Node.js, ">
+
+
+<meta property="og:title" content="Node.js Code Coverage with Istanbul and Mocha  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-03-30T00:00:00Z" />
+<meta property="og:article:modified_time" content="2015-03-30T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="CodeCoverage">
+    
+<meta property="og:article:tag" content="Istanbul">
+    
+<meta property="og:article:tag" content="Mocha">
+    
+<meta property="og:article:tag" content="Node.js">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Node.js Code Coverage with Istanbul and Mocha" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Node.js Code Coverage with Istanbul and Mocha",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-03-30",
+    "description": "",
+    "wordCount": 534
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.24.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Node.js Code Coverage with Istanbul and Mocha
+</h1>
+
+  <div class="metas">
+<time datetime="2015-03-30">30 Mar, 2015</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 3 min
+  &middot; (534 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/codecoverage">CodeCoverage</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/istanbul">Istanbul</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/mocha">Mocha</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/node.js">Node.js</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>Code coverage is a measure of how much of your code has been  tested. Code coverage tools run a set of metrics in order to determine if your code has been completely tested, reducing the chance of  unwanted bugs.</p>
+
+<p>You have to take into account that even if your code has 100% code coverage, that doesn&#8217;t guarantee all your tests are correct, there are some logical bugs you might miss, but as with anything, practice will help you with that.</p>
+
+<p></p>
+
+<h3 id="istanbul">Istanbul</h3>
+
+<blockquote>
+<p>Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests.</p>
+
+<p><a href="https://github.com/gotwarlost/istanbul">Istanbul Github</a></p>
+</blockquote>
+
+<p><a href="https://github.com/gotwarlost/istanbul">Istanbul</a> runs some  of the common coverage metrics/criteria to check whether your code meets the code coverage expectations. You can learn more about basic metrics here <a href="http://en.wikipedia.org/wiki/Code_coverage">http://en.wikipedia.org/wiki/Code_coverage</a></p>
+
+<h3 id="prerrequsites">Prerrequsites</h3>
+
+<p>Node.js &gt;= 0.12, npm</p>
+
+<p>You can also read my previous post <a href="https://ottog2486.wordpress.com/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/">Setting Up your Node.js Unit Tests with Chai And Mocha</a>.</p>
+
+<h3 id="steps">Steps</h3>
+
+<ul>
+<li><strong>Create a new directory. In your terminal run:</strong></li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">mkdir mochaistanbul && cd mochaistanbul.
+</pre>
+
+<ul>
+<li><strong>Run npm init.</strong></li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">npm init
+</pre>
+
+<ul>
+<li>Install Mocha, Chai and Istanbul:</li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">npm install mocha chai istanbul --save-dev
+
+</pre>
+
+<ul>
+<li><strong>Create  a module &#8220;index.js&#8221; in the root directory (mochaistanbul).</strong></li>
+</ul>
+
+<pre class="brush: jscript; title: ; notranslate" title="">module.exports.getCoverageHello = function(to) {
+
+return 'Hello, this is your first coverage test ' + to;
+};
+
+</pre>
+
+<ul>
+<li><strong>Create a test directory</strong></li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">mkdir test
+</pre>
+
+<ul>
+<li><strong>Create a simple test file index.js under the test directory.</strong></li>
+</ul>
+
+<pre class="brush: jscript; title: ; notranslate" title="">//test/index.js
+
+/require chai and our simple 'index.js' module
+require('chai').should();
+//If you require an specific module, it will be included in the coverage test
+var testModule = require('../index.js');
+
+//simple test suite
+
+describe('Istanbul Code Coverage', function(){
+
+});
+</pre>
+
+<ul>
+<li><strong>In your package.json file add (or replace) the following script.</strong></li>
+</ul>
+
+<pre class="brush: jscript; title: ; notranslate" title="">...
+"scripts": {
+"test": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --check-leaks"
+},
+...
+</pre>
+
+<ul>
+<li><strong>Run &#8216;npm test&#8217; in order to execute your test script.</strong></li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">npm test
+=============================== Coverage summary ===============================
+Statements   : 50% ( 1/2 )
+Branches     : 100% ( 0/0 )
+Functions    : 0% ( 0/1 )
+Lines        : 50% ( 1/2 )
+================================================================================
+
+</pre>
+
+<p>When you ran that command a new &#8220;coverage&#8221; folder was created, which contains a report of your code coverage. Check this file: <strong>mochaistanbul/coverage/lcov-report/mochaistanbul/index.js.html</strong></p>
+
+<p><em>Based on the report you can tell that one function is not being covered by the test suite.</em> Let&#8217;s write a test in order to fix that</p>
+
+<p><img src="http://i2.wp.com/res.cloudinary.com/dhilz8r88/image/upload/v1427676167/Istanbul%20Report%20Test.png?w=474" alt="report" data-recalc-dims="1" />.</p>
+
+<ul>
+<li><strong>Write a test for our function.</strong></li>
+</ul>
+
+<pre class="brush: jscript; title: ; notranslate" title="">it('should return a hello message for an specific name', function() {
+var name = 'otto';
+var result = testModule.getCoverageMessage(name);
+result.should.contain(name);
+});
+</pre>
+
+<ul>
+<li><strong>Run &#8216;npm test&#8217; again</strong></li>
+</ul>
+
+<pre class="brush: bash; title: ; notranslate" title="">npm test
+=============================================================================
+Writing coverage object [/home/otto/workspace/tutorial/mochaistanbul/coverage/coverage.json]
+Writing coverage reports at [/home/otto/workspace/tutorial/mochaistanbul/coverage]
+=============================================================================
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 2/2 )
+Branches     : 100% ( 0/0 )
+Functions    : 100% ( 1/1 )
+Lines        : 100% ( 2/2 )
+
+</pre>
+
+<p>The output reflect the new test we&#8217;ve implemented, so the code coverage is in 100%.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>This was a simple example on how to get started with Code Coverage in Node.js. With Istanbul you can validate that your tests are covering your code based on specific metrics, which helps you  reduce the chance of defects. You should be aware that code coverage won&#8217;t guarantee your code is free of defects, but it&#8217;s a great tool for helping you with that.</p>
+
+<p><strong>Code available on github</strong> <a href="https://github.com/ottogiron/mochaistanbul">https://github.com/ottogiron/mochaistanbul</a></p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/" title="Setting Up your Node.js Unit Tests with Chai And Mocha">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://ottogiron.github.io/2015/04/12/node.js-modeshape-rest-client/" title="Node.js Modeshape REST Client">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

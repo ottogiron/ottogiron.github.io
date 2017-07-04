@@ -9,7 +9,7 @@
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
     <copyright>(c) 2015 Otto Giron.</copyright>
-    <lastBuildDate>Wed, 23 Dec 2015 21:26:11 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 23 Dec 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Chapi Go Toy Web Framework</title>
       <link>https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/</link>
-      <pubDate>Wed, 23 Dec 2015 21:26:11 -0600</pubDate>
+      <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/</guid>
       <description>&lt;p&gt;On my quest of learning I heard about this relatively new language called &lt;a href=&#34;https://golang.org/&#34;&gt;go&lt;/a&gt;. I don&amp;rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&amp;hellip; I also read the first chapters of this book: &lt;a href=&#34;http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639&#34;&gt;Programing in go&lt;/a&gt;&lt;/p&gt;

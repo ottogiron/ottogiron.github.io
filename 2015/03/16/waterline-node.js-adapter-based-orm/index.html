@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Waterline: Node.js adapter-based ORM  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="javascript, nodejs, sails, waterline, ">
+
+
+<meta property="og:title" content="Waterline: Node.js adapter-based ORM  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-03-16T00:00:00Z" />
+<meta property="og:article:modified_time" content="2015-03-16T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="javascript">
+    
+<meta property="og:article:tag" content="nodejs">
+    
+<meta property="og:article:tag" content="sails">
+    
+<meta property="og:article:tag" content="waterline">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Waterline: Node.js adapter-based ORM" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Waterline: Node.js adapter-based ORM",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-03-16",
+    "description": "",
+    "wordCount": 438
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2015/03/16/waterline-node.js-adapter-based-orm/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.24.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Waterline: Node.js adapter-based ORM
+</h1>
+
+  <div class="metas">
+<time datetime="2015-03-16">16 Mar, 2015</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 3 min
+  &middot; (438 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/javascript">javascript</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/nodejs">nodejs</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/sails">sails</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/waterline">waterline</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p><a href="https://github.com/balderdashy/waterline">Waterline</a> is an ORM/ODM (Object Document Mapper), part of the <a href="http://sailsjs.org">Sails Framework</a>.</p>
+
+<p>Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.</p>
+
+<p></p>
+
+<h3 id="pros">Pros</h3>
+
+<h4 id="standardized-data-access-interface">Standardized Data Access Interface</h4>
+
+<p>In a project is always necessary to have a set of standards or architectural guidelines that the developers can follow, so they can focus on business logic. As developers thinking one from many ways of doing a something adds mental load and it makes us waste time. Also depending in our experience, we may end up writing a lot of boilerplate code that might not be even modular and reusable.</p>
+
+<p>Waterline provides a common language the developers can agree on, it also reduces the boilerplate code implementing common database operations.</p>
+
+<h4 id="flexibility">Flexibility</h4>
+
+<p>Imagine that you are working in a project using let&#8217;s say Mongo. Then you realize that the company has no previous experience with Mongo, they have invested time and resources in MySQL and they want to stick to that. You have already invested a couple of weeks developing a prototype using Waterline. No problem! since you&#8217;re using Waterline you just need to change a couple of configuration lines.</p>
+
+<h4 id="adapters">Adapters</h4>
+
+<p>An adapter is an interface that maps methods like find() and create() to lower level syntax like &#8220;SELECT * FROM&#8221; and &#8220;INSERT INTO&#8221;. Sails core team maintains a set of adapters for the most popular databases. A great thing is that you can also contribute with your own adapters, or the existing ones.</p>
+
+<h3 id="cons">Cons</h3>
+
+<h4 id="maturity-or-availability-of-adapters">Maturity Or Availability Of Adapters</h4>
+
+<p>For some databases adapters might be at early stages, or nonexistent. The good thing is that you can implement your own adapter or contribute existing ones. Right now I&#8217;m working on an adapter for Elasticsearch <a href="https://github.com/ottogiron/sails-elasticsearch">https://github.com/ottogiron/sails-elasticsearch</a></p>
+
+<h3 id="example">Example</h3>
+
+<pre class="brush: jscript; title: ; notranslate" title="">var waterline = require('waterline');
+
+// Instantiate a new instance of the ORM
+var orm = new Waterline();
+
+var config = {
+adapters: {
+mysql: require('sails-mysql')
+},
+
+connections: {
+myLocalMySql: {
+adapter: 'mysql'
+host: 'localhost',
+database: 'test'
+}
+}
+};
+
+var User = Waterline.Collection.extend({
+identity: 'user',
+connection: 'mysql',
+attributes: {
+first_name: 'string',
+last_name: 'string'
+}
+
+})
+
+//Load the models
+orm.looadCollection(User);
+
+// Start Waterline passing adapters in
+orm.initialize(config, function(err, models) {
+models.user
+.find({first_name: 'something'})
+.execute(function(err, result){
+// do something
+});
+})
+
+</pre>
+
+<p>Find additional examples on how to map models and using them here: <a href="http://sailsjs.org/#!/documentation/concepts/ORM">http://sailsjs.org/#!/documentation/concepts/ORM</a></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>With Waterline you can create an abstraction of different databases, reducing the boilerplate code for common operations, and giving the developers a common data access language they can work with, letting them focus in the business logic.</p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/" title="Weaselpecker: Node.js- Waterline Simple Mocking Library">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://ottogiron.github.io/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/" title="Setting Up your Node.js Unit Tests with Chai And Mocha">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
