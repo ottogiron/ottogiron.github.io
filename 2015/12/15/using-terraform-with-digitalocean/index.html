@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Using Terraform with DigitalOcean  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="Terraform, Digital Ocean, ">
+
+
+<meta property="og:title" content="Using Terraform with DigitalOcean  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-12-15T21:25:39-06:00" />
+<meta property="og:article:modified_time" content="2015-12-15T21:25:39-06:00" />
+
+  
+    
+<meta property="og:article:tag" content="Terraform">
+    
+<meta property="og:article:tag" content="Digital Ocean">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Using Terraform with DigitalOcean" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/" />
+<meta name="twitter:domain" content="http://ottogiron.me">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Using Terraform with DigitalOcean",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-12-15",
+    "description": "",
+    "wordCount": 994
+  }
+</script>
+
+
+
+<link rel="canonical" href="http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://ottogiron.me/touch-icon-144-precomposed.png">
+<link href="http://ottogiron.me/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.24.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://ottogiron.mecss/font-awesome.min.css">
+<link rel="stylesheet" href="http://ottogiron.mecss/style.css">
+<link rel="stylesheet" href="http://ottogiron.mecss/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="http://ottogiron.me">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="http://ottogiron.me">Home</a>
+
+
+  
+<a href="http://ottogiron.me/about">About</a>
+
+<a href="http://ottogiron.me/categories" title="Show Categories">Categories</a>
+
+<a href="http://ottogiron.me/post" title="Show list of posts">Posts</a>
+
+<a href="http://ottogiron.me/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Using Terraform with DigitalOcean
+</h1>
+
+  <div class="metas">
+<time datetime="2015-12-15">15 Dec, 2015</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 5 min
+  &middot; (994 Words)
+  <br>
+  
+<a class="label" href="http://ottogiron.me/tags/devops">DevOps</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>In this post I&rsquo;m going to use <a href="https://terraform.io/">Terraform</a> to define and launch a <a href="https://www.digitalocean.com/">DigitalOcean</a> server and a DNS <a href="https://www.digitalocean.com/">DigitalOcean</a> A Record.</p>
+
+<p></p>
+
+<h3 id="prerrequisites">Prerrequisites</h3>
+
+<ol>
+<li><a href="https://www.digitalocean.com/">DigitalOcean</a> Account.</li>
+<li>A <a href="https://www.digitalocean.com/">DigitalOcean</a> API access token. Follow the instructions <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#HowToGenerateaPersonalAccessToken">here</a></li>
+</ol>
+
+<h2 id="terraform">Terraform</h2>
+
+<p><a href="https://terraform.io/">Terraform</a> is a tool created by <a href="https://hashicorp.com/">HashiCorp</a>, best known as the creators of <a href="https://www.vagrantup.com/">Vagrant</a>. <a href="https://terraform.io/">Terraform</a> allows you to define and launch your servers infrastructure, using a declarative language.</p>
+
+<p>Some of the supported providers are: DigitalOcean, Azure, AWS , and Google Cloud just to name a few.</p>
+
+<h2 id="terraform-providers">Terraform Providers</h2>
+
+<p>A provider is responsible for understanding API interactions and exposing resources. For example, the <a href="https://www.terraform.io/docs/providers/do/index.html">DigitalOcean Provider</a> can create resources such Servers and DNS records using the <a href="https://developers.digitalocean.com/">DigitalOcean API</a></p>
+
+<h2 id="terraform-resources">Terraform Resources</h2>
+
+<p>Resources are a component of your infrastructure. It might be some low level component such as a physical server, virtual machine, or container.</p>
+
+<h2 id="terraform-provisioners">Terraform Provisioners</h2>
+
+<p>When a resource is initially created, provisioners can be executed to initialize that resource.</p>
+
+<h3 id="installing-terraform">Installing Terraform</h3>
+
+<ol>
+<li>Download the correct package for your system here <a href="https://terraform.io/downloads.html">https://terraform.io/downloads.html</a></li>
+<li>unzip in a directory referenced by PATH, so you can run the terraform command easily.
+
+<ul>
+<li>eg.
+<code>
+unzip ~/Downloads/terraform_0.6.8_darwin_amd64.zip -d /usr/local/bin
+</code>
+Now you should be able to run the terraform command.</li>
+</ul></li>
+</ol>
+
+<pre><code>$ terraform version
+$ Terraform v0.6.8
+</code></pre>
+
+<h3 id="create-a-terraform-configuration-project">Create a Terraform Configuration Project</h3>
+
+<pre><code>mkdir ~/terraform-digitalocean-example
+cd ~/terraform-digitalocean-example
+</code></pre>
+
+<h3 id="create-a-provider-configuration">Create a provider configuration</h3>
+
+<p>Create a file called digitalocean-provider.tf:</p>
+
+<pre><code class="language-bash">vi digitalocean-provider.tf
+</code></pre>
+
+<p>Add the following contents:</p>
+
+<pre><code>variable &quot;do_token&quot; {} #Your DigitalOcean token
+variable &quot;pub_key&quot; {}  #Public Key to be installed in your DigitalOcean server
+variable &quot;pvt_key&quot; {}#Private Key Terraform will use to connect to your new server
+variable &quot;ssh_fingerprint&quot; {}#SSH Fingerprint
+
+provider &quot;digitalocean&quot; {
+token = &quot;${var.do_token}&quot;
+}
+</code></pre>
+
+<h3 id="create-a-server-resource">Create a Server Resource</h3>
+
+<p>Create a file called example-server.tf</p>
+
+<pre><code>vi example-server.tf
+</code></pre>
+
+<p>Add the following contents:</p>
+
+<pre><code>resource &quot;digitalocean_droplet&quot; &quot;example_mydomain&quot; {
+	image = &quot;ubuntu-14-04-x64&quot;
+	name = &quot;example.mydomain.com&quot;
+	region = &quot;nyc2&quot;
+	size = &quot;512mb&quot;
+	private_networking = true
+	ssh_keys = [
+		&quot;${var.ssh_fingerprint}&quot;
+	]
+
+	connection {
+		user = &quot;root&quot;
+		type = &quot;ssh&quot;
+		key_file = &quot;${var.pvt_key}&quot;
+		timeout = &quot;2m&quot;
+	}
+
+  provisioner &quot;remote-exec&quot; {
+      inline = [
+        &quot;echo 'I might use puppet or ansible to provision my server here'&quot;,
+      ]
+    }
+}
+</code></pre>
+
+<p><strong><em>connection:</em></strong> Allows Terraform to connect to your server via ssh.</p>
+
+<p><strong><em>privisioner:</em></strong> You can run different types of provisioners to provision your server.</p>
+
+<h3 id="create-a-dns-a-record-resource">Create a DNS A Record Resource</h3>
+
+<p>I&rsquo;m assuming that you own a domain and and it&rsquo;s already managed with  <a href="https://www.digitalocean.com">DigitalOcean</a>, if you don&rsquo;t you can follow <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean">this post</a>.</p>
+
+<p>Create a file called example.mydomain.com:</p>
+
+<pre><code>vi example.mydomain.com.tf
+</code></pre>
+
+<p>Add the following contents:</p>
+
+<pre><code>resource &quot;digitalocean_record&quot; &quot;A-example&quot; {
+  domain = &quot;mydomain.com&quot;
+  type = &quot;A&quot;
+  name = &quot;example&quot;
+  value = &quot;${digitalocean_droplet.example_jumlabs.ipv4_address}&quot;
+}
+</code></pre>
+
+<p><strong><em>Note:</em></strong> Remember to change mydomain.com with your own domain name.</p>
+
+<h3 id="add-password-less-ssh-key-to-digitalocean-cloud">Add Password-less SSH Key to DigitalOcean Cloud</h3>
+
+<p>If you have not already added a password-less SSH key to your DigitalOcean account, do so by following this <a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets">tutorial</a>.</p>
+
+<h4 id="generate-your-ssh-fingerprint">Generate your ssh_fingerprint</h4>
+
+<p>Assuming that your private key is located at ~/.ssh/id_rsa, run :</p>
+
+<pre><code>ssh-keygen -lf ~/.ssh/id_rsa.pub | awk '{print $2}'
+</code></pre>
+
+<p>This will output your Fingerprint. Something similar to this:</p>
+
+<pre><code>e7:42:16:d7:e5:a0:43:23:82:7d:a3:59:cf:9e:92:f3
+</code></pre>
+
+<p>You will need this Fingerprint later.</p>
+
+<h3 id="define-configuration-variables-values">Define Configuration Variables Values</h3>
+
+<p>Remember this? :</p>
+
+<pre><code>variable &quot;do_token&quot; {} #Your DigitalOcean token
+variable &quot;pub_key&quot; {}  #Public Key to be installed in your DigitalOcean server
+variable &quot;pvt_key&quot; {}#Private Key Terraform will use to connect to your new server
+variable &quot;ssh_fingerprint&quot; {}#SSH Fingerprint
+</code></pre>
+
+<p>We are almost ready to run our <a href="https://terraform.io/">Terraform</a> configuration, but we still need to define a value for this variables. <a href="https://terraform.io/">Terraform</a> has a few ways of passing the value of this variables when you finally apply your configurations, I personally liked the file option.</p>
+
+<p>Create  a file called terraform.tfvars:</p>
+
+<pre><code>vi terraform.tfvars
+</code></pre>
+
+<p>Add the follow contents</p>
+
+<pre><code>do_token = &quot;&lt;your_digital_ocean_personal_token&gt;&quot;
+pub_key = &quot;/Users/&lt;user&gt;/.ssh/id_rsa.pub&quot;
+pvt_key = &quot;/Users/&lt;user&gt;/.ssh/id_rsa&quot;
+ssh_fingerprint = &quot;&lt;your_ssh_fingerprint&gt;&quot;
+</code></pre>
+
+<p><strong><em>Warning:</em></strong> If you   are going to version control your Terraform Configuration Project, you should add this file to .gitignore, since it contains personal sensitive information.</p>
+
+<h3 id="reviewing-you-plan">Reviewing you Plan</h3>
+
+<p>Run:</p>
+
+<pre><code>terraform plan
+</code></pre>
+
+<p>It will output something like this:</p>
+
+<pre><code>+ digitalocean_droplet.example_mydomain
+    image:                &quot;&quot; =&gt; &quot;ubuntu-14-04-x64&quot;
+    ipv4_address:         &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    ipv4_address_private: &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    ipv6_address:         &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    ipv6_address_private: &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    locked:               &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    name:                 &quot;&quot; =&gt; &quot;example.jumlabs.com&quot;
+    private_networking:   &quot;&quot; =&gt; &quot;1&quot;
+    region:               &quot;&quot; =&gt; &quot;nyc2&quot;
+    size:                 &quot;&quot; =&gt; &quot;512mb&quot;
+    ssh_keys.#:           &quot;&quot; =&gt; &quot;1&quot;
+    ssh_keys.0:           &quot;&quot; =&gt; &quot;e7:42:16:d7:e5:a0:43:23:82:7d:a3:59:cf:9e:92:f3&quot;
+    status:               &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+
++ digitalocean_record.A-example
+    domain:   &quot;&quot; =&gt; &quot;mydomain.com&quot;
+    name:     &quot;&quot; =&gt; &quot;example&quot;
+    port:     &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    priority: &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+    type:     &quot;&quot; =&gt; &quot;A&quot;
+    value:    &quot;&quot; =&gt; &quot;${digitalocean_droplet.example_mydomain.ipv4_address}&quot;
+    weight:   &quot;&quot; =&gt; &quot;&lt;computed&gt;&quot;
+
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+</code></pre>
+
+<p>It basically describes the actions Terraform will take at the time you actually apply it. If you have  used git, you can think of this as a &lsquo;git status&rsquo;, something you might like to run before &laquo;committing&raquo; your changes.</p>
+
+<h3 id="applying-your-configuration">Applying Your Configuration</h3>
+
+<p>So we are ready to actually create our resources.</p>
+
+<p>Run:</p>
+
+<pre><code>terraform apply
+</code></pre>
+
+<p>Now yo can go a grab a cup of coffee while terraform applies your configuration.</p>
+
+<p>At the end it will output something like this:</p>
+
+<pre><code>digitalocean_droplet.example_jumlabs:
+  id = &lt;some_id&gt;
+  image = ubuntu-14-04-x64
+  ipv4_address = &lt;generated_ip&gt;
+  ipv4_address_private = &lt;generated_ip_address&gt;
+  locked = false
+  name = example.mydomain.com
+  private_networking = true
+  region = nyc2
+  size = 512mb
+  ssh_keys.# = 1
+  ssh_keys.0 = &lt;key_fingerprint&gt;&gt;
+  status = active
+digitalocean_record.A-example:
+  id = &lt;some_id&gt;
+  domain = mydomain.com
+  name = example
+  port = 0
+  priority = 0
+  type = A
+  value = &lt;some_ip&gt;
+  weight = 0
+</code></pre>
+
+<p><strong><em>Note:</em></strong>
+Remember that DigitalOcean might charge you for the time this resources are alive. If you don&rsquo;t want to keep them you can</p>
+
+<p>run:</p>
+
+<pre><code>terraform destroy
+</code></pre>
+
+<h4 id="terraform-vs-ansible-chef-puppet">Terraform vs Ansible/Chef/Puppet</h4>
+
+<p>There&rsquo;s actually a difference between Terraform and provisioning tools such Ansible. Terraform allows you to define your infrastructure resources, you still need something to provision those resources, in that case you can use something like Ansible to do that Job.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Terraform is a tool for defining and manage infrastructure resources for several providers, from physical servers to the  cloud. This allows easily reproduce common definitions to scale your infrastructure at will. You still need provisioning tools such Ansible to provision your servers.</p>
+
+<p>I&rsquo;ll write post  about provisioning with Ansible later. Wait for it!!</p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="http://ottogiron.me/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/" title="Weaselpecker v1.1.0 released and available on NPM">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="http://ottogiron.me/2015/12/23/chapi-go-toy-web-framework/" title="Chapi Go Toy Web Framework">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="http://ottogiron.me/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

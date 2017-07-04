@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on Polyglott</title>
+    <link>http://ottogiron.me/tags/nodejs/</link>
+    <description>Recent content in Nodejs on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <copyright>(c) 2015 Otto Giron.</copyright>
+    <lastBuildDate>Mon, 16 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://ottogiron.me/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Waterline: Node.js adapter-based ORM</title>
+      <link>http://ottogiron.me/2015/03/16/waterline-node-js-adapter-based-orm/</link>
+      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>http://ottogiron.me/2015/03/16/waterline-node-js-adapter-based-orm/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; is an ORM/ODM (Object Document Mapper), part of the &lt;a href=&#34;http://sailsjs.org&#34;&gt;Sails Framework&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Weaselpecker: Node.js- Waterline Simple Mocking Library</title>
+      <link>http://ottogiron.me/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</link>
+      <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>http://ottogiron.me/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/ottogiron/weaselpecker&#34;&gt;Weaselpecker&lt;/a&gt; is a small nodejs module I wrote for mocking &lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; models. His name is inspired in the famous and beloved weasel woodpecker rider.&lt;/p&gt;
+
+&lt;p style=&#34;text-align:center&#34;&gt;
+  &lt;img src=&#34;http://i1.wp.com/res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_354/v1425798498/cnn-weaslepecker_c9d7yf.jpg?w=474&#34; alt=&#34;alt WeaselPecker&#34; data-recalc-dims=&#34;1&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

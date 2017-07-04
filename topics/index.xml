@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topics on Polyglott</title>
+    <link>http://ottogiron.me/topics/</link>
+    <description>Recent content in Topics on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <copyright>(c) 2015 Otto Giron.</copyright>
+    
+	<atom:link href="http://ottogiron.me/topics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

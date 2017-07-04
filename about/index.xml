@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Polyglott</title>
+    <link>http://ottogiron.me/about/</link>
+    <description>Recent content in Abouts on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <copyright>(c) 2015 Otto Giron.</copyright>
+    <lastBuildDate>Thu, 24 Feb 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://ottogiron.me/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://ottogiron.me/about/</link>
+      <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>http://ottogiron.me/about/</guid>
+      <description>I&amp;#8217;ve been a programmer since 2008, primarily in web development. Some of the languages I&amp;#8217;ve used are GO, JavaScript/Node, Java, C#, Visual Basic, PHP among others. I really enjoy learning new things and being informed about what&amp;#8217;s new. In my current Job I work as a DevOps/Infrastructure Engineer, even a really enjoy front end development and I do a lot of front end in my spare time.
+In this blog I will write about anything in my daily living.</description>
+    </item>
+    
+  </channel>
+</rss>
