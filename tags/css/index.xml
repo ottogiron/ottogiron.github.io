@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on Polyglott</title>
-    <link>http://ottogiron.me/tags/css/</link>
+    <link>https://ottogiron.github.io/tags/css/</link>
     <description>Recent content in Css on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2015 Otto Giron.</copyright>
     <lastBuildDate>Sun, 08 Mar 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://ottogiron.me/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web Components</title>
-      <link>http://ottogiron.me/2015/03/07/web-components/</link>
+      <link>https://ottogiron.github.io/2015/03/07/web-components/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/2015/03/07/web-components/</guid>
+      <guid>https://ottogiron.github.io/2015/03/07/web-components/</guid>
       <description>&lt;p&gt;Web components is a set of standards which brings technologies we were used to, but normally provided by frameworks or libraries such angular, ember, knockout (among others). Web Components standard natively supports in the web browser custom HTML elements, HTML imports and templates, also &amp;#8220;shadow DOM&amp;#8221; which extends the current DOM specification providing boundaries and better encapsulation between DOM trees.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

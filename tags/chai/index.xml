@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chai on Polyglott</title>
-    <link>http://ottogiron.me/tags/chai/</link>
+    <link>https://ottogiron.github.io/tags/chai/</link>
     <description>Recent content in Chai on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2015 Otto Giron.</copyright>
     <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://ottogiron.me/tags/chai/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.github.io/tags/chai/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting Up your Node.js Unit Tests with Chai And Mocha</title>
-      <link>http://ottogiron.me/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</link>
+      <link>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</guid>
+      <guid>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</guid>
       <description>&lt;p&gt;In this post I&amp;#8217;m going to list the steps for setting up a Node.js project with unit testing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

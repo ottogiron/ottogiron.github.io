@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devops on Polyglott</title>
-    <link>http://ottogiron.me/tags/devops/</link>
+    <link>https://ottogiron.github.io/tags/devops/</link>
     <description>Recent content in Devops on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2015 Otto Giron.</copyright>
     <lastBuildDate>Tue, 15 Dec 2015 21:25:39 -0600</lastBuildDate>
     
-	<atom:link href="http://ottogiron.me/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Terraform with DigitalOcean</title>
-      <link>http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</link>
+      <link>https://ottogiron.github.io/2015/12/15/using-terraform-with-digitalocean/</link>
       <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</guid>
+      <guid>https://ottogiron.github.io/2015/12/15/using-terraform-with-digitalocean/</guid>
       <description>&lt;p&gt;In this post I&amp;rsquo;m going to use &lt;a href=&#34;https://terraform.io/&#34;&gt;Terraform&lt;/a&gt; to define and launch a &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; server and a DNS &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; A Record.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

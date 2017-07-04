@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Polyglott</title>
-    <link>http://ottogiron.me/categories/</link>
+    <link>https://ottogiron.github.io/categories/</link>
     <description>Recent content in Categories on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -10,51 +10,51 @@
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
     <copyright>(c) 2015 Otto Giron.</copyright>
     
-	<atom:link href="http://ottogiron.me/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Css</title>
-      <link>http://ottogiron.me/categories/css/</link>
+      <link>https://ottogiron.github.io/categories/css/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/categories/css/</guid>
+      <guid>https://ottogiron.github.io/categories/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Devops</title>
-      <link>http://ottogiron.me/categories/devops/</link>
+      <link>https://ottogiron.github.io/categories/devops/</link>
       <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/categories/devops/</guid>
+      <guid>https://ottogiron.github.io/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>http://ottogiron.me/categories/java/</link>
+      <link>https://ottogiron.github.io/categories/java/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/categories/java/</guid>
+      <guid>https://ottogiron.github.io/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>http://ottogiron.me/categories/javascript/</link>
+      <link>https://ottogiron.github.io/categories/javascript/</link>
       <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/categories/javascript/</guid>
+      <guid>https://ottogiron.github.io/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Node.Js</title>
-      <link>http://ottogiron.me/categories/node.js/</link>
+      <link>https://ottogiron.github.io/categories/node.js/</link>
       <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>http://ottogiron.me/categories/node.js/</guid>
+      <guid>https://ottogiron.github.io/categories/node.js/</guid>
       <description></description>
     </item>
     

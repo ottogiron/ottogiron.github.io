@@ -3,245 +3,245 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://ottogiron.me/2015/12/23/chapi-go-toy-web-framework/</loc>
+    <loc>https://ottogiron.github.io/2015/12/23/chapi-go-toy-web-framework/</loc>
     <lastmod>2015-12-23T21:26:11-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</loc>
+    <loc>https://ottogiron.github.io/2015/12/15/using-terraform-with-digitalocean/</loc>
     <lastmod>2015-12-15T21:25:39-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/</loc>
+    <loc>https://ottogiron.github.io/2015/08/05/weaselpecker-v1-1-0-released-and-available-on-npm/</loc>
     <lastmod>2015-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/05/10/managing-your-javascript-dependencies-with-requirejs/</loc>
+    <loc>https://ottogiron.github.io/2015/05/10/managing-your-javascript-dependencies-with-requirejs/</loc>
     <lastmod>2015-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/04/12/node-js-modeshape-rest-client/</loc>
+    <loc>https://ottogiron.github.io/2015/04/12/node-js-modeshape-rest-client/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/03/29/node-js-code-coverage-with-istanbul-and-mocha/</loc>
+    <loc>https://ottogiron.github.io/2015/03/29/node-js-code-coverage-with-istanbul-and-mocha/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</loc>
+    <loc>https://ottogiron.github.io/2015/03/22/setting-up-your-node-js-unit-tests-with-chai-and-mocha/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/03/16/waterline-node-js-adapter-based-orm/</loc>
+    <loc>https://ottogiron.github.io/2015/03/16/waterline-node-js-adapter-based-orm/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</loc>
+    <loc>https://ottogiron.github.io/2015/03/08/weasel-node-js-waterline-simple-mocking-library/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2015/03/07/web-components/</loc>
+    <loc>https://ottogiron.github.io/2015/03/07/web-components/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/2014/07/20/apache-thrift-java-server-and-nodejs-client/</loc>
+    <loc>https://ottogiron.github.io/2014/07/20/apache-thrift-java-server-and-nodejs-client/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/about/</loc>
+    <loc>https://ottogiron.github.io/about/</loc>
     <lastmod>2011-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/about/</loc>
+    <loc>https://ottogiron.github.io/about/</loc>
     <lastmod>2011-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/apache-jackrabbit/</loc>
+    <loc>https://ottogiron.github.io/tags/apache-jackrabbit/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/apache-thrift/</loc>
+    <loc>https://ottogiron.github.io/tags/apache-thrift/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/categories/</loc>
+    <loc>https://ottogiron.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/chai/</loc>
+    <loc>https://ottogiron.github.io/tags/chai/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/codecoverage/</loc>
+    <loc>https://ottogiron.github.io/tags/codecoverage/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/css/</loc>
+    <loc>https://ottogiron.github.io/categories/css/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/categories/css/</loc>
+    <loc>https://ottogiron.github.io/tags/css/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/devops/</loc>
+    <loc>https://ottogiron.github.io/categories/devops/</loc>
     <lastmod>2015-12-15T21:25:39-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/categories/devops/</loc>
+    <loc>https://ottogiron.github.io/tags/devops/</loc>
     <lastmod>2015-12-15T21:25:39-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/golang/</loc>
+    <loc>https://ottogiron.github.io/tags/golang/</loc>
     <lastmod>2015-12-23T21:26:11-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/html/</loc>
+    <loc>https://ottogiron.github.io/tags/html/</loc>
     <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/istanbul/</loc>
+    <loc>https://ottogiron.github.io/tags/istanbul/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/java/</loc>
+    <loc>https://ottogiron.github.io/categories/java/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/categories/java/</loc>
+    <loc>https://ottogiron.github.io/tags/java/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/javascript/</loc>
+    <loc>https://ottogiron.github.io/categories/javascript/</loc>
+    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.github.io/tags/javascript/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/categories/javascript/</loc>
-    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://ottogiron.me/tags/javasscript/</loc>
+    <loc>https://ottogiron.github.io/tags/javasscript/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/jcr/</loc>
+    <loc>https://ottogiron.github.io/tags/jcr/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/mocha/</loc>
+    <loc>https://ottogiron.github.io/tags/mocha/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/modeshape/</loc>
+    <loc>https://ottogiron.github.io/tags/modeshape/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/node.js/</loc>
-    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://ottogiron.me/categories/node.js/</loc>
+    <loc>https://ottogiron.github.io/categories/node.js/</loc>
     <lastmod>2015-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/nodejs/</loc>
+    <loc>https://ottogiron.github.io/tags/node.js/</loc>
+    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.github.io/tags/nodejs/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/</loc>
+    <loc>https://ottogiron.github.io/</loc>
     <lastmod>2015-12-23T21:26:11-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/post/</loc>
+    <loc>https://ottogiron.github.io/post/</loc>
     <lastmod>2015-12-23T21:26:11-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/sails/</loc>
+    <loc>https://ottogiron.github.io/tags/sails/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/</loc>
+    <loc>https://ottogiron.github.io/tags/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/topics/</loc>
+    <loc>https://ottogiron.github.io/topics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/unit-testing/</loc>
+    <loc>https://ottogiron.github.io/tags/unit-testing/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ottogiron.me/tags/waterline/</loc>
+    <loc>https://ottogiron.github.io/tags/waterline/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
