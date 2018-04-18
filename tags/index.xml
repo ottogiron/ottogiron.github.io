@@ -8,7 +8,7 @@
     <language>en-EN</language>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2015 Otto Giron.</copyright>
+    <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -42,6 +42,15 @@
     </item>
     
     <item>
+      <title>Ci/Cd</title>
+      <link>https://ottogiron.github.io/tags/ci/cd/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Codecoverage</title>
       <link>https://ottogiron.github.io/tags/codecoverage/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
@@ -62,7 +71,7 @@
     <item>
       <title>Devops</title>
       <link>https://ottogiron.github.io/tags/devops/</link>
-      <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/tags/devops/</guid>
       <description></description>
@@ -132,6 +141,15 @@
     </item>
     
     <item>
+      <title>K8s</title>
+      <link>https://ottogiron.github.io/tags/k8s/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mocha</title>
       <link>https://ottogiron.github.io/tags/mocha/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
@@ -150,7 +168,7 @@
     </item>
     
     <item>
-      <title>Node.Js</title>
+      <title>Node.js</title>
       <link>https://ottogiron.github.io/tags/node.js/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
@@ -173,6 +191,15 @@
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/tags/sails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spinnaker</title>
+      <link>https://ottogiron.github.io/tags/spinnaker/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/spinnaker/</guid>
       <description></description>
     </item>
     

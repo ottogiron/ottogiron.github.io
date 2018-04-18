@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.Js on Polyglott</title>
+    <title>Node.js on Polyglott</title>
     <link>https://ottogiron.github.io/categories/node.js/</link>
-    <description>Recent content in Node.Js on Polyglott</description>
+    <description>Recent content in Node.js on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2015 Otto Giron.</copyright>
+    <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Thu, 06 Aug 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/categories/node.js/index.xml" rel="self" type="application/rss+xml" />

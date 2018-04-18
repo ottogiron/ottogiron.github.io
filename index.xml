@@ -8,11 +8,22 @@
     <language>en-EN</language>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2015 Otto Giron.</copyright>
-    <lastBuildDate>Wed, 23 Dec 2015 00:00:00 +0000</lastBuildDate>
+    <copyright>(c) 2018 Otto Giron.</copyright>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Continuos delivery, Spinnaker, and Kubernetes</title>
+      <link>https://ottogiron.github.io/2018/04/18/continuos-delivery-spinnaker-and-kubernetes/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/2018/04/18/continuos-delivery-spinnaker-and-kubernetes/</guid>
+      <description>&lt;p&gt;Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by embracing automation and constant communication.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Chapi Go Toy Web Framework</title>

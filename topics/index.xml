@@ -8,10 +8,29 @@
     <language>en-EN</language>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2015 Otto Giron.</copyright>
+    <copyright>(c) 2018 Otto Giron.</copyright>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ci/Cd</title>
+      <link>https://ottogiron.github.io/topics/ci/cd/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/topics/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K8s</title>
+      <link>https://ottogiron.github.io/topics/k8s/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/topics/k8s/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
