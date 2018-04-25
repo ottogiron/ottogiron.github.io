@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Why Docker  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="docker, lxc, ">
+
+
+<meta property="og:title" content="Why Docker  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2018/04/25/why-docker/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-04-25T00:00:00Z" />
+<meta property="og:article:modified_time" content="2018-04-25T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="docker">
+    
+<meta property="og:article:tag" content="lxc">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Why Docker" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2018/04/25/why-docker/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Why Docker",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2018-04-25",
+    "description": "",
+    "wordCount": 682
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2018/04/25/why-docker/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.36" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Why Docker
+</h1>
+
+  <div class="metas">
+<time datetime="2018-04-25">25 Apr, 2018</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 4 min
+  &middot; (682 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/virtualization">virtualization</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/lxc">lxc</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/docker">docker</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  
+
+<h2 id="abstractions">Abstractions</h2>
+
+<p>We use abstraction to be able to cope with the high amount of information our senses receive all the time, by filtering and focus on what we really need, without that ability we would not be able to function properly in life.</p>
+
+<p>When we talk about applications, it is useful to abstract them as packages. There are some things we would like to do with those packages, which is finally going to be delivered to a client or user.</p>
+
+<p>Here are some of the steps (Simplified Software Lifecycle):</p>
+
+<ol>
+<li>Create the package</li>
+<li>Test the package quality</li>
+<li>Ship the package</li>
+<li>Monitor package</li>
+<li>Deliver the package</li>
+</ol>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<p>An interface serves as a mean of communication between two things (thing being my abstraction of anything), if we think about software, we can talk about User Interfaces, or humans using language which is also an Interface. So interfaces are well defined ways to interact or communicate with something.</p>
+
+<p>Applications have interfaces and those interfaces can be well defined, with that we get a good abstraction in order to implement the basic steps I mentioned above regarding the software lifecycle</p>
+
+<h2 id="docker">Docker</h2>
+
+<p>So Docker provides an abstraction called container and a well defined interface to that container. Besides providing a great abstraction for applications in general, it enforces isolation of that application at the OS level.</p>
+
+<p>Docker is a relatively new technology which is currently known to provide a solution for a more efficient infrastructure  resources utilization and applications isolation, by creating an abstraction on top of <a href="https://linuxcontainers.org/">LXC</a> or linux containers, in short <a href="https://linuxcontainers.org/">LXC</a> provides a user space interface for the linux kernel, which allows to  create bounded processes which can access the linux kernel directly. An important and key concept here, is how we can create an isolated process inside another OS, which resembles  hypervisors virtualization or &laquo;Virtual Machines&raquo;, in that category we are used to software such VirtualBox, VMWare, or KVM. The key difference is <a href="https://linuxcontainers.org/">LXC</a> bounded processes can access to the kernel directly, while virtualization actually simulates or virtualizes hardware, in order to run a complete OS on top of it, which is not as performant as it could be.</p>
+
+<p><img src="http://res.cloudinary.com/dhilz8r88/image/upload/v1524174068/ottogironme/docker-containers-vms.png" alt="VM's vs Docker" /></p>
+
+<p>Using docker vs Virtual Machines, for isolating our applications, allows us to use infrastructure resources efficiently, by providing a way of packaging an applications with only the necessary resources, and creating an abstraction  which allows us to treat them all like they are the same (Docker Containers), independently of how we implemented them.</p>
+
+<p>Having applications wrapped in docker containers has many benefits, since you wont need to install all the dependencies for specific languages in your hosts, but only docker. That allows you to focus on automation and and standardization of your deployment process without having to think in an endless amount of prerequisites and dependencies for different languages and tools.</p>
+
+<h2 id="docker-concepts">Docker Concepts</h2>
+
+<p>This are some of the basic docker concepts, but not necessarily all of them.</p>
+
+<h3 id="docker-image">Docker Image</h3>
+
+<p>A container Image is an stand-alone, executable package of a software you might have implemented in any language which contains everything you need in order to run. For example, if your run a Java application one of the requisites for the container to include would be the JVM and of course, your application .jar file.</p>
+
+<h3 id="docker-container">Docker Container</h3>
+
+<p>So you have docker ready Image, which you can implement by using the docker tooling (Docker CLI). Now you would like to run an application based on that image, that running instance of your image is called a container.</p>
+
+<h3 id="docker-registry">Docker Registry</h3>
+
+<p>A registry is a server application that stores and lets us distribute Docker Images.</p>
+
+<p><strong><em>More information about containers and the Docker Registry:</em></strong> <a href="https://www.docker.com/what-container">https://www.docker.com/what-container</a> <a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In software development we normally select the right tool for the job, that normally allows to implement solutions for problems effectively, but we are often limited by the complexity of operating solutions implemented in different technologies/languages. Docker greatly reduces that complexity by providing a common interface which makes reasoning about common software problems, such security, deployment and monitoring, the benefit of that is we can focus more on implementing value for our clients.</p>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2018/04/18/continuos-delivery-spinnaker-and-kubernetes/" title="Continuos delivery, Spinnaker, and Kubernetes">
+      Previous
+    </a>
+    
+
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2018 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
