@@ -78,6 +78,15 @@
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>https://ottogiron.github.io/tags/docker/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Golang</title>
       <link>https://ottogiron.github.io/tags/golang/</link>
       <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
@@ -150,6 +159,15 @@
     </item>
     
     <item>
+      <title>Lxc</title>
+      <link>https://ottogiron.github.io/tags/lxc/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/lxc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mocha</title>
       <link>https://ottogiron.github.io/tags/mocha/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
@@ -209,6 +227,15 @@
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>https://ottogiron.github.io/tags/virtualization/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/virtualization/</guid>
       <description></description>
     </item>
     

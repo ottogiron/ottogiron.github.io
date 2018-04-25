@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lxc on Polyglott</title>
+    <link>https://ottogiron.github.io/tags/lxc/</link>
+    <description>Recent content in Lxc on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <copyright>(c) 2018 Otto Giron.</copyright>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.github.io/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why Docker</title>
+      <link>https://ottogiron.github.io/2018/04/19/why-docker/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/2018/04/19/why-docker/</guid>
+      <description>Abstractions We use abstraction to be able to cope with the high ammount of information our senses recieve all the time, by filtering and focus on what we really need, without that ability we would not be able to function properly in life.
+When we talk about applications, it is useful to abstract them as packages. There are some things we would like to do with those packages, which is finally going to be delivered to a client or user.</description>
+    </item>
+    
+  </channel>
+</rss>

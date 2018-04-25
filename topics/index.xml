@@ -24,6 +24,15 @@
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>https://ottogiron.github.io/topics/docker/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/topics/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>K8s</title>
       <link>https://ottogiron.github.io/topics/k8s/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
