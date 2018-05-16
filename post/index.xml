@@ -9,17 +9,17 @@
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
     <copyright>(c) 2018 Otto Giron.</copyright>
-    <lastBuildDate>Mon, 30 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Why Kubernetes</title>
-      <link>https://ottogiron.github.io/2018/04/30/why-kubernetes/</link>
-      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://ottogiron.github.io/2018/05/16/why-kubernetes/</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2018/04/30/why-kubernetes/</guid>
+      <guid>https://ottogiron.github.io/2018/05/16/why-kubernetes/</guid>
       <description>Deployment, scaling, monitoring, service discovery, configuration, we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to have a sustainable infrastructure for implementing software which is able to support increasing levels of success.
 There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view.</description>
     </item>
