@@ -80,7 +80,7 @@
     <item>
       <title>Docker</title>
       <link>https://ottogiron.github.io/tags/docker/</link>
-      <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/tags/docker/</guid>
       <description></description>
@@ -155,6 +155,15 @@
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://ottogiron.github.io/tags/kubernetes/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

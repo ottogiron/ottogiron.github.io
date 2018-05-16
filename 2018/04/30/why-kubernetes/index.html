@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Why Kubernetes  &middot; Polyglott</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="kubernetes, docker, ">
+
+
+<meta property="og:title" content="Why Kubernetes  &middot; Polyglott ">
+<meta property="og:site_name" content="Polyglott"/>
+<meta property="og:url" content="https://ottogiron.github.io/2018/04/30/why-kubernetes/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-04-30T00:00:00Z" />
+<meta property="og:article:modified_time" content="2018-04-30T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="kubernetes">
+    
+<meta property="og:article:tag" content="docker">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@hottroth" />
+<meta name="twitter:creator" content="@hottroth" />
+<meta name="twitter:title" content="Why Kubernetes" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ottogiron.github.io/2018/04/30/why-kubernetes/" />
+<meta name="twitter:domain" content="https://ottogiron.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Why Kubernetes",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2018-04-30",
+    "description": "",
+    "wordCount": 951
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://ottogiron.github.io/2018/04/30/why-kubernetes/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.github.io/touch-icon-144-precomposed.png">
+<link href="https://ottogiron.github.io/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.40.3" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ottogiron.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/style.css">
+<link rel="stylesheet" href="https://ottogiron.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71498851-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://ottogiron.github.io/">
+  Polyglott
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  About today
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://ottogiron.github.io/">Home</a>
+
+
+  
+<a href="https://ottogiron.github.io/about">About</a>
+
+<a href="https://ottogiron.github.io/categories" title="Show Categories">Categories</a>
+
+<a href="https://ottogiron.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://ottogiron.github.io/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
+  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Why Kubernetes
+</h1>
+
+  <div class="metas">
+<time datetime="2018-04-30">30 Apr, 2018</time>
+
+
+  
+    &middot; by Otto Giron
+  
+  &middot; Read in about 5 min
+  &middot; (951 Words)
+  <br>
+  
+<a class="label" href="https://ottogiron.github.io/tags/kubernetes">kubernetes</a>
+
+<a class="label" href="https://ottogiron.github.io/tags/docker">docker</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  
+
+<p>Deployment, scaling, monitoring, service discovery, configuration,  we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to  have a sustainable infrastructure for implementing software which is able to support increasing levels of success.</p>
+
+<p>There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view. What I mean with that is: &laquo;An application is an application independently of the underlying technology in which it was implemented&raquo; Docker is useful for that since it provides a nice abstraction of what represents an application, I exposed my thoughts on that topic here <a href="http://ottogiron.me/2018/04/25/why-docker/">Why Docker</a>.</p>
+
+<p>At some point, applications are ready for deployment, for that we need infrastructure (hosts), at the same time we need an architecture to support deployment. A basic infrastructure architecture might look something like this:</p>
+
+<p><img src="http://res.cloudinary.com/dhilz8r88/image/upload/v1525123943/ottogironme/basic-infrastructure-architecture.png" alt="Basic infrastructure Architecture" />.</p>
+
+<p>There are many ways in which we can scale the above infrastructure, but levels of complexity for management and deployment can grow depending what solution we pick.</p>
+
+<p>Kubernetes (shorten as <strong><em>k8s</em></strong>)  is a tool for automating deployment, scaling and management of containers across clusters of hosts. It creates an abstraction on top of those clusters, so you can visualize them as a single resource. Container operations (deployment, scaling, etc.) on top the kubernetes cluster are performed using the API, internally kubernetes performs the necessary operations to schedule the container in a host which is run  based on several parameters such resources availability on the different hosts of the cluster.</p>
+
+<p>One of the biggest advantage of using kuberentes is its declarative approach for defining and managing containers/applications state (for example: number of instances). You define a YAML or JSON file with the desired state, call the API to define or update that state, and the necessary actions for that to be a reality are performed internally. I will explain a little more about that later.</p>
+
+<h2 id="kubernetes-concepts">Kubernetes Concepts</h2>
+
+<h3 id="api-server">API Server</h3>
+
+<p>The API Server is the interface you will use for defining the state of the cluster. Internally the API stores the desired state in the highly available data store <a href="https://coreos.com/etcd/">etcd</a>, actions to reach the desired state are performed by controllers.</p>
+
+<h3 id="controllers">Controllers</h3>
+
+<p>After you have defined the desired state for the cluster, controllers are in charge to match that  state in the cluster.</p>
+
+<p>Standard out of the book controllers are <a href="https://kubernetes.io/docs/reference/generated/kube-controller-manager/">kube-controller-manager</a> and <a href="https://kubernetes.io/docs/concepts/overview/components/#cloud-controller-manager">cloud-controller-manager</a>.</p>
+
+<p>From the kubernetes documentation: <em>For simplicity you can think of this as te following</em></p>
+
+<pre><code>1. What is the current state of the cluster (X)?
+2. What is the desired state of the cluster (Y)?
+3. X == Y ?
+   true - Do nothing.
+   false - Perform tasks to get to Y (such as starting or restarting containers, or scaling the number of replicas of a given application).
+(Return to 1)
+</code></pre>
+
+<h3 id="kubernetes-objects">Kubernetes Objects</h3>
+
+<p>The basic kubernentes objects are:</p>
+
+<ul>
+<li>Pod</li>
+<li>Service</li>
+<li>Volume</li>
+<li>Namespace</li>
+<li>Ingress</li>
+</ul>
+
+<p>These are some of the basic object but there are many more.</p>
+
+<h4 id="pod">Pod</h4>
+
+<p>A pod is a set of containers with shared storage/network. Containers within a pod share IP address and port space, and can find each other via localhost. You can think of them as many process running in the same OS.</p>
+
+<p>There are interesting applications for pods (besides just serving or running a single application), for example &laquo;Sidecar Containers&raquo; which enhances the functionality of the main container. An example I created is a  Pod with <a href="https://gohugo.io/">Hugo Static Site Framework</a>. The pod contains 3 containers which share a common files volume, <a href="https://github.com/kubernetes/git-sync">git-sync</a> keeps the master branch of the site up to date, <a href="https://hub.docker.com/r/ottogiron/hugo/">ottogiron/hugo</a> regenerates the site when new changes are found, and an standard nginx image serves the generated static content. You can check an example here: <a href="https://github.com/ottogiron/hugo-k8s-test">https://github.com/ottogiron/hugo-k8s-test</a>.</p>
+
+<p>Some other applications are described here <a href="https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/">https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/</a></p>
+
+<h4 id="service">Service</h4>
+
+<p>Pods are created dynamically and have a limited lifespan, that is how it&rsquo;s meant to be, because you can scale them or destroy them on demand.</p>
+
+<p>Here comes the <em>Service</em>. Services are an abstraction which defines a set of <em>Pods</em> to access them, you can also think of it as what we call a microservice.</p>
+
+<h4 id="volume">Volume</h4>
+
+<p>Files on containers are ephemeral, what that means is if a container (inside a pod) is destroyed, all the files will be destroyed as well.</p>
+
+<p>Volumes allows us to define a file system volume with an explicit lifetime from an explicit source using <em>volumes types</em>, for example a distributed file system such <em>nfs</em> or a cloud <em>AWS</em> or GCP <em>bucket</em>. Implementation of volume sources is based on plugins, so there are some interesting implementations such gitRepo. You can check available types <a href="https://kubernetes.io/docs/concepts/storage/volumes/">here</a></p>
+
+<h4 id="namespaces">Namespaces</h4>
+
+<p>Namespaces are intended for use in environments with many users spread across multiple teams, or projects. When you first create a cluster by default there is an pre existing namespace called &laquo;default&raquo;.</p>
+
+<h4 id="ingress">Ingress</h4>
+
+<p>By default services in a cluster are not accessible from the outside, you must explicitly expose them. There are many ways of achieving that. Ingress is a collection of rules that allow inbound connections to reach the cluster services, you can think of them  as something such NGINX which allows you to define different rules for accessing the available services.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When we create a new application,  implicitly there are many things we need to take into account in order expose it as a service for our end users, and not only that, also to make sure it meets the quality standards to be successful. Networking, load balancing, security, monitoring, orchestration, service discovery are some of the most important topics. Kubernetes already takes into account and solves many of our problems letting us focus on what is important which is implementing a great product.</p>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://ottogiron.github.io/2018/04/25/why-docker/" title="Why Docker">
+      Previous
+    </a>
+    
+
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2018 Otto Giron.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//ottogironme.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://ottogiron.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
