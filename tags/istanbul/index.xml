@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Istanbul on Polyglott</title>
-    <link>https://ottogiron.github.io/tags/istanbul/</link>
+    <link>https://ottogiron.me/tags/istanbul/</link>
     <description>Recent content in Istanbul on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Mon, 30 Mar 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ottogiron.github.io/tags/istanbul/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.me/tags/istanbul/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Node.js Code Coverage with Istanbul and Mocha</title>
-      <link>https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</link>
+      <link>https://ottogiron.me/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</guid>
+      <guid>https://ottogiron.me/2015/03/30/node.js-code-coverage-with-istanbul-and-mocha/</guid>
       <description>&lt;p&gt;Code coverage is a measure of how much of your code has been  tested. Code coverage tools run a set of metrics in order to determine if your code has been completely tested, reducing the chance of  unwanted bugs.&lt;/p&gt;
 
 &lt;p&gt;You have to take into account that even if your code has 100% code coverage, that doesn&amp;#8217;t guarantee all your tests are correct, there are some logical bugs you might miss, but as with anything, practice will help you with that.&lt;/p&gt;

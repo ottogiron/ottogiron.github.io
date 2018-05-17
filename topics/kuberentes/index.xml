@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kuberentes on Polyglott</title>
-    <link>https://ottogiron.github.io/topics/kuberentes/</link>
+    <link>https://ottogiron.me/topics/kuberentes/</link>
     <description>Recent content in Kuberentes on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Wed, 16 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ottogiron.github.io/topics/kuberentes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.me/topics/kuberentes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Why Kubernetes</title>
-      <link>https://ottogiron.github.io/2018/05/16/why-kubernetes/</link>
+      <link>https://ottogiron.me/2018/05/16/why-kubernetes/</link>
       <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2018/05/16/why-kubernetes/</guid>
+      <guid>https://ottogiron.me/2018/05/16/why-kubernetes/</guid>
       <description>Deployment, scaling, monitoring, service discovery, configuration, we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to have a sustainable infrastructure for implementing software which is able to support increasing levels of success.
 There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view.</description>
     </item>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Polyglott</title>
-    <link>https://ottogiron.github.io/topics/docker/</link>
+    <link>https://ottogiron.me/topics/docker/</link>
     <description>Recent content in Docker on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Wed, 25 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ottogiron.github.io/topics/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.me/topics/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Why Docker</title>
-      <link>https://ottogiron.github.io/2018/04/25/why-docker/</link>
+      <link>https://ottogiron.me/2018/04/25/why-docker/</link>
       <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/2018/04/25/why-docker/</guid>
+      <guid>https://ottogiron.me/2018/04/25/why-docker/</guid>
       <description>Abstractions We use abstraction to be able to cope with the high amount of information our senses receive all the time, by filtering and focus on what we really need, without that ability we would not be able to function properly in life.
 When we talk about applications, it is useful to abstract them as packages. There are some things we would like to do with those packages, which are finally going to be delivered to a client or user.</description>
     </item>

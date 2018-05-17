@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Polyglott</title>
-    <link>https://ottogiron.github.io/tags/</link>
+    <link>https://ottogiron.me/tags/</link>
     <description>Recent content in Tags on Polyglott</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -11,249 +11,249 @@
     <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ottogiron.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ottogiron.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apache Jackrabbit</title>
-      <link>https://ottogiron.github.io/tags/apache-jackrabbit/</link>
+      <link>https://ottogiron.me/tags/apache-jackrabbit/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/apache-jackrabbit/</guid>
+      <guid>https://ottogiron.me/tags/apache-jackrabbit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache Thrift</title>
-      <link>https://ottogiron.github.io/tags/apache-thrift/</link>
+      <link>https://ottogiron.me/tags/apache-thrift/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/apache-thrift/</guid>
+      <guid>https://ottogiron.me/tags/apache-thrift/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chai</title>
-      <link>https://ottogiron.github.io/tags/chai/</link>
+      <link>https://ottogiron.me/tags/chai/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/chai/</guid>
+      <guid>https://ottogiron.me/tags/chai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ci/Cd</title>
-      <link>https://ottogiron.github.io/tags/ci/cd/</link>
+      <link>https://ottogiron.me/tags/ci/cd/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/ci/cd/</guid>
+      <guid>https://ottogiron.me/tags/ci/cd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Codecoverage</title>
-      <link>https://ottogiron.github.io/tags/codecoverage/</link>
+      <link>https://ottogiron.me/tags/codecoverage/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/codecoverage/</guid>
+      <guid>https://ottogiron.me/tags/codecoverage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Css</title>
-      <link>https://ottogiron.github.io/tags/css/</link>
+      <link>https://ottogiron.me/tags/css/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/css/</guid>
+      <guid>https://ottogiron.me/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Devops</title>
-      <link>https://ottogiron.github.io/tags/devops/</link>
+      <link>https://ottogiron.me/tags/devops/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/devops/</guid>
+      <guid>https://ottogiron.me/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://ottogiron.github.io/tags/docker/</link>
+      <link>https://ottogiron.me/tags/docker/</link>
       <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/docker/</guid>
+      <guid>https://ottogiron.me/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://ottogiron.github.io/tags/golang/</link>
+      <link>https://ottogiron.me/tags/golang/</link>
       <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/golang/</guid>
+      <guid>https://ottogiron.me/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Html</title>
-      <link>https://ottogiron.github.io/tags/html/</link>
+      <link>https://ottogiron.me/tags/html/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/html/</guid>
+      <guid>https://ottogiron.me/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Istanbul</title>
-      <link>https://ottogiron.github.io/tags/istanbul/</link>
+      <link>https://ottogiron.me/tags/istanbul/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/istanbul/</guid>
+      <guid>https://ottogiron.me/tags/istanbul/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://ottogiron.github.io/tags/java/</link>
+      <link>https://ottogiron.me/tags/java/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/java/</guid>
+      <guid>https://ottogiron.me/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://ottogiron.github.io/tags/javascript/</link>
+      <link>https://ottogiron.me/tags/javascript/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/javascript/</guid>
+      <guid>https://ottogiron.me/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javasscript</title>
-      <link>https://ottogiron.github.io/tags/javasscript/</link>
+      <link>https://ottogiron.me/tags/javasscript/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/javasscript/</guid>
+      <guid>https://ottogiron.me/tags/javasscript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jcr</title>
-      <link>https://ottogiron.github.io/tags/jcr/</link>
+      <link>https://ottogiron.me/tags/jcr/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/jcr/</guid>
+      <guid>https://ottogiron.me/tags/jcr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>K8s</title>
-      <link>https://ottogiron.github.io/tags/k8s/</link>
+      <link>https://ottogiron.me/tags/k8s/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/k8s/</guid>
+      <guid>https://ottogiron.me/tags/k8s/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>https://ottogiron.github.io/tags/kubernetes/</link>
+      <link>https://ottogiron.me/tags/kubernetes/</link>
       <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/kubernetes/</guid>
+      <guid>https://ottogiron.me/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lxc</title>
-      <link>https://ottogiron.github.io/tags/lxc/</link>
+      <link>https://ottogiron.me/tags/lxc/</link>
       <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/lxc/</guid>
+      <guid>https://ottogiron.me/tags/lxc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mocha</title>
-      <link>https://ottogiron.github.io/tags/mocha/</link>
+      <link>https://ottogiron.me/tags/mocha/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/mocha/</guid>
+      <guid>https://ottogiron.me/tags/mocha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modeshape</title>
-      <link>https://ottogiron.github.io/tags/modeshape/</link>
+      <link>https://ottogiron.me/tags/modeshape/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/modeshape/</guid>
+      <guid>https://ottogiron.me/tags/modeshape/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Node.js</title>
-      <link>https://ottogiron.github.io/tags/node.js/</link>
+      <link>https://ottogiron.me/tags/node.js/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/node.js/</guid>
+      <guid>https://ottogiron.me/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nodejs</title>
-      <link>https://ottogiron.github.io/tags/nodejs/</link>
+      <link>https://ottogiron.me/tags/nodejs/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/nodejs/</guid>
+      <guid>https://ottogiron.me/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sails</title>
-      <link>https://ottogiron.github.io/tags/sails/</link>
+      <link>https://ottogiron.me/tags/sails/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/sails/</guid>
+      <guid>https://ottogiron.me/tags/sails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spinnaker</title>
-      <link>https://ottogiron.github.io/tags/spinnaker/</link>
+      <link>https://ottogiron.me/tags/spinnaker/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/spinnaker/</guid>
+      <guid>https://ottogiron.me/tags/spinnaker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unit Testing</title>
-      <link>https://ottogiron.github.io/tags/unit-testing/</link>
+      <link>https://ottogiron.me/tags/unit-testing/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/unit-testing/</guid>
+      <guid>https://ottogiron.me/tags/unit-testing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Virtualization</title>
-      <link>https://ottogiron.github.io/tags/virtualization/</link>
+      <link>https://ottogiron.me/tags/virtualization/</link>
       <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/virtualization/</guid>
+      <guid>https://ottogiron.me/tags/virtualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Waterline</title>
-      <link>https://ottogiron.github.io/tags/waterline/</link>
+      <link>https://ottogiron.me/tags/waterline/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.github.io/tags/waterline/</guid>
+      <guid>https://ottogiron.me/tags/waterline/</guid>
       <description></description>
     </item>
     
