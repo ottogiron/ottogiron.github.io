@@ -205,18 +205,18 @@
 </header>
 
   <div class="container content">
-  <p>On my quest of learning I heard about this relatively new language called <a href="https://golang.org/">go</a>. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: <a href="http://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639">Programing in go</a></p>
+  <p>On my quest of learning I heard about this relatively new language called <a href="https://golang.org/">go</a>. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: <a href="https://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639">Programing in go</a></p>
 
 <p></p>
 
-<p>My first thought was to write a simple REST API but since I&rsquo;ve been working with Node <a href="http://hapijs.com/">hapijs</a>  lately I wondered if I could write a super simple framework inspired in the <a href="http://hapijs.com/">hapijs</a> plugin system which I really like.</p>
+<p>My first thought was to write a simple REST API but since I&rsquo;ve been working with Node <a href="https://hapijs.com/">hapijs</a>  lately I wondered if I could write a super simple framework inspired in the <a href="https://hapijs.com/">hapijs</a> plugin system which I really like.</p>
 
 <h2 id="chapi">Chapi</h2>
 
-<p>So <a href="https://github.com/ottogiron/chapi">Chapi</a> is a Toy Web Framework inspired in <a href="http://hapijs.com/">hapijs</a> (Almost chappie), so it basically implements a simple plugin system, routes using the <a href="http://www.gorillatoolkit.org/pkg/mux">gorilla mux</a>, and a server using <a href="https://github.com/codegangsta/negroni">negroni</a>.</p>
+<p>So <a href="https://github.com/ottogiron/chapi">Chapi</a> is a Toy Web Framework inspired in <a href="https://hapijs.com/">hapijs</a> (Almost chappie), so it basically implements a simple plugin system, routes using the <a href="https://www.gorillatoolkit.org/pkg/mux">gorilla mux</a>, and a server using <a href="https://github.com/codegangsta/negroni">negroni</a>.</p>
 
 <div style="text-align:center">
-<img  src="http://res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_400/v1450930257/ottogironme/chappie-window-sticker.jpg">
+<img  src="https://res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_400/v1450930257/ottogironme/chappie-window-sticker.jpg">
 </div>
 
 <h3 id="chapi-server">Chapi Server</h3>
@@ -274,7 +274,7 @@ func (p *MyPlugin) Dependencies() []string {
 
 <h3 id="chapi-routes">Chapi Routes</h3>
 
-<p>You can register route handlers using Chapi Server. It uses the same route syntax of <a href="http://www.gorillatoolkit.org/pkg/mux">gorilla mux</a></p>
+<p>You can register route handlers using Chapi Server. It uses the same route syntax of <a href="https://www.gorillatoolkit.org/pkg/mux">gorilla mux</a></p>
 
 <pre><code class="language-go">s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
 </code></pre>
@@ -327,7 +327,7 @@ func main() {
 <pre><code>go run main.go
 </code></pre>
 
-<p>Go to <a href="http://localhost:8080">http://localhost:8080</a>. You should see something like this:</p>
+<p>Go to <a href="https://localhost:8080">https://localhost:8080</a>. You should see something like this:</p>
 
 <pre><code>404 page not found
 </code></pre>
@@ -411,7 +411,7 @@ func main() {
 <pre><code>go run main.go
 </code></pre>
 
-<p>Go to <a href="http://localhost:8080">http://localhost:8080</a>, you&rsquo;ll see something like this:</p>
+<p>Go to <a href="https://localhost:8080">https://localhost:8080</a>, you&rsquo;ll see something like this:</p>
 
 <pre><code>!!!Hello Chapi
 </code></pre>

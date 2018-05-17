@@ -31,7 +31,7 @@
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; is an ORM/ODM (Object Document Mapper), part of the &lt;a href=&#34;http://sailsjs.org&#34;&gt;Sails Framework&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; is an ORM/ODM (Object Document Mapper), part of the &lt;a href=&#34;https://sailsjs.org&#34;&gt;Sails Framework&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.&lt;/p&gt;
 
@@ -47,7 +47,7 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/ottogiron/weaselpecker&#34;&gt;Weaselpecker&lt;/a&gt; is a small nodejs module I wrote for mocking &lt;a href=&#34;https://github.com/balderdashy/waterline&#34;&gt;Waterline&lt;/a&gt; models. His name is inspired in the famous and beloved weasel woodpecker rider.&lt;/p&gt;
 
 &lt;p style=&#34;text-align:center&#34;&gt;
-  &lt;img src=&#34;http://i1.wp.com/res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_354/v1425798498/cnn-weaslepecker_c9d7yf.jpg?w=474&#34; alt=&#34;alt WeaselPecker&#34; data-recalc-dims=&#34;1&#34; /&gt;
+  &lt;img src=&#34;https://i1.wp.com/res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_354/v1425798498/cnn-weaslepecker_c9d7yf.jpg?w=474&#34; alt=&#34;alt WeaselPecker&#34; data-recalc-dims=&#34;1&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -70,7 +70,7 @@
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/2014/07/21/apache-thrift-java-server-and-nodejs-client/</guid>
-      <description>&lt;p&gt;As an exercise for learning &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; I&amp;#8217;m writing a simple API for &lt;a href=&#34;http://jackrabbit.apache.org/oak/&#34; target=&#34;_blank&#34;&gt;Apache Jackrabit 3&lt;/a&gt; using this software framework developed by Facebook.  &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.&lt;/p&gt;
+      <description>&lt;p&gt;As an exercise for learning &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; I&amp;#8217;m writing a simple API for &lt;a href=&#34;https://jackrabbit.apache.org/oak/&#34; target=&#34;_blank&#34;&gt;Apache Jackrabit 3&lt;/a&gt; using this software framework developed by Facebook.  &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
