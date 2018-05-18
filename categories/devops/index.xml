@@ -7,7 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Tue, 15 Dec 2015 21:25:39 -0600</lastBuildDate>
     
 	<atom:link href="https://ottogiron.me/categories/devops/index.xml" rel="self" type="application/rss+xml" />
@@ -15,10 +14,10 @@
     
     <item>
       <title>Using Terraform with DigitalOcean</title>
-      <link>https://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</link>
+      <link>https://ottogiron.me/post/terraform-digital-ocean/</link>
       <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</guid>
+      <guid>https://ottogiron.me/post/terraform-digital-ocean/</guid>
       <description>&lt;p&gt;In this post I&amp;rsquo;m going to use &lt;a href=&#34;https://terraform.io/&#34;&gt;Terraform&lt;/a&gt; to define and launch a &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; server and a DNS &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; A Record.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

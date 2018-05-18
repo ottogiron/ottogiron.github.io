@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Managing your JavaScript Dependencies with RequireJS</title>
+  <meta property="og:title" content="Managing your JavaScript Dependencies with RequireJS" />
+  <meta name="twitter:title" content="Managing your JavaScript Dependencies with RequireJS" />
+  <meta name="description" content="RequireJS is a module loader for JavaScript. RequiresJS is based on the AMD (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you require or use a module, it will be retrieved asynchronously and cached at the time you need it, that improves performance since you don&#8217;t need to load all your dependencies (JavaScript files) at the same time.
+
+">
+  <meta property="og:description" content="RequireJS is a module loader for JavaScript. RequiresJS is based on the AMD (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you require or use a module, it will be retrieved asynchronously and cached at the time you need it, that improves performance since you don&#8217;t need to load all your dependencies (JavaScript files) at the same time.
+
+">
+  <meta name="twitter:description" content="RequireJS is a module loader for JavaScript. RequiresJS is based on the AMD (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Managing your JavaScript Dependencies with RequireJS</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 10, 2015
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><a href="https://requirejs.org/" target="_blank">RequireJS</a> is a module loader for JavaScript. RequiresJS is based on the <a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition" target="_blank">AMD</a> (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you require or use a module, it will be retrieved asynchronously and cached at the time you need it, that improves performance since you don&#8217;t need to load all your dependencies (JavaScript files) at the same time.</p>
+
+<p></p>
+
+<p>Having performance improvements in order to provide a better user experience is great, but there&#8217;s a another recurrent issue in web projects, how do we handle our dependencies in order to avoid conflicts between them?. As we know, web browsers natively support the &#8220;script&#8221; tag which allows us to include external javascript files in html pages.</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;script src="//code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>But what happens if we include two different versions of JQuery:</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;script src="//code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+ &lt;script src="//code.jquery.com/jquery-1.2.6.min.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>What you see above is not unusual, two developers might be working on different features for a page and both need an specific version of a library (Maybe a plugin depends on an specific version of JQuery). In that case the feature of one of the developers will be broken since the resolved version will be &#8220;1.2.6&#8221;, even both versions are included. With RequireJS modules, developers can isolate their logic in order to avoid this type of conflicts.</p>
+
+<h2 id="example">Example</h2>
+
+<h3 id="project-structure">Project Structure</h3>
+
+<ul>
+<li>requirejs-example
+
+<ul>
+<li>index.html</li>
+<li>js
+
+<ul>
+<li>jquery-1.11.3.min.js</li>
+<li>main.js</li>
+<li>require.min.js</li>
+<li>utils/test-module.js</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="index-html">index.html</h3>
+
+<p>It includes a single script &#8216;require.js&#8217; with a data-main attribute pointing to the requirejs configuration script &#8216;js/main&#8217;. RequireJS suggests to keep all inline scripts out the HTML, in order to take advantage of the optimization tool.</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;RequireJS Example&lt;/title&gt;
+        &lt;!-- data-main attribute tells require.js to load
+             js/main.js after require.js loads. --&gt;
+        &lt;script data-main="js/main" src="js/require.min.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;RequireJS Example&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 id="js-main-js">js/main.js</h3>
+
+<p>We&#8217;ll use this script to configure our dependencies, including third party libraries such JQuery.</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">//dependencies configuration
+requirejs.config({
+    //Sets the base url for resolving our modules
+    baseUrl: '../js',
+    //Define some paths  or alias to third party modules
+    paths: {
+        //We can use JQuery as module just defining a path, given that it is implemented as a module using AMD spec
+        'jquery': 'jquery-1.11.3.min'
+    }
+});
+
+
+</pre>
+
+<h3 id="js-utils-test-module-js">js/utils/test-module.js</h3>
+
+<pre class="brush: jscript; title: ; notranslate" title="">//First parameter is an array of dependencies ['jquery'].
+// Second parameter is a function in which we'll define our module
+define(['jquery'], function(jquery113){
+    // We have to return the module implementation (function, constructor function, plain object etc.)
+    return {
+        doTest: function() {
+            //Our logic is simple, just an alert with the jquery module version.
+            alert("Jquery Version is" + jquery113.fn.jquery);
+        }
+    };
+});
+</pre>
+
+<p>test-module.js defines a simple module ( a plain JS object), with a method using jQuery (the required dependency). Note that &#8216;jquery&#8217; is the alias/path we&#8217;ve defined in our main.js configuration file for jQuery.</p>
+
+<p>Now we can use our module:</p>
+
+<p><strong>main.js</strong></p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">require(['utils/test-module'], function(testModule){
+
+    testModule.doTest();
+});
+</pre>
+
+<p>The module and all the dependencies are loaded asynchrounously.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>RequireJS provides a way to write modular JavaScript in the web browser, improving performance, providing better cohesion and reducing coupling. It also resolves a recurrent issue in web development the &#8220;dependency hell&#8221; when using &#8220;script&#8221; tag.</p>
+
+<p><strong>Code available on github</strong> <a href="https://github.com/ottogiron/requirejs-example">https://github.com/ottogiron/requirejs-example</a></p>
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/post/2015-04-12-node-js-modeshape-rest-client/" data-toggle="tooltip" data-placement="top" title="Node.js Modeshape REST Client">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/post/2015-08-05-weaselpecker-v1-1-0-released-and-available-on-npm/" data-toggle="tooltip" data-placement="top" title="Weaselpecker v1.1.0 released and available on NPM">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Continuos delivery, Spinnaker, and Kubernetes</title>
+  <meta property="og:title" content="Continuos delivery, Spinnaker, and Kubernetes" />
+  <meta name="twitter:title" content="Continuos delivery, Spinnaker, and Kubernetes" />
+  <meta name="description" content="Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by embracing automation and constant communication.
+
+">
+  <meta property="og:description" content="Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by embracing automation and constant communication.
+
+">
+  <meta name="twitter:description" content="Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/continuos-delivery-spinnaker-k8s/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/continuos-delivery-spinnaker-k8s/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Continuos delivery, Spinnaker, and Kubernetes</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on April 18, 2018
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by embracing automation and constant communication.</p>
+
+<p></p>
+
+<p>Continuous Integration (<strong><em>CI</em></strong>) is related to the set of stages after which the final product is a deployable artifact, for example a docker container. CI is something you would normally implement with a continuous integration server such Jenkins.</p>
+
+<p>The continuous delivery process (<strong><em>CD</em></strong>) should take care of validation and and deployment of the artifact through the different environments (e.g. QA, Staging, Production) in a reliable and repeatable way.</p>
+
+<p>Spinnaker is a tool for Continuous Delivery. It aims to provide the means for defining a delivery pipeline to different cloud providers (e.g. AWS, Google Cloud, k8s), defining best practices which are transparently translated to those providers infrastructure. That includes; security, monitoring, load balancing, clusters and so on.</p>
+
+<p>Kubernetes provides a great platform for software/containers orchestration. It aims to be a software platform on top of your infrastructure allowing you to solve common problems (networking, scaling, monitoring, orchestration) with help of its great API. It is up to us to decide which Kubernetes tools to use, which might be selecting from a wide array of available options or implementing them by ourselves.</p>
+
+<h2 id="everything-is-about-the-process">Everything is about the process</h2>
+
+<p>There&rsquo;s something I have learn during these years working with software infrastructure &laquo;Everything is about the process&raquo;. You could have selected or implemented tools using the greatest and latest technologies, but no one will want or know how to use them if you do not define and document a decent process to put some order over the potential chaos. I think that does not apply just to technology but in general when working with groups of people.</p>
+
+<p>Talking about Continuous Delivery, Spinnaker is a great tool for defining delivery processes, it will allow you to orchestrate the delivery process with the multiple existing steps in an explicit way, by defining Pipelines, and administering your infrastructure easily for different providers.</p>
+
+<h2 id="spinnaker-pipelines">Spinnaker Pipelines</h2>
+
+<p><strong><em>From the spinnaker documentation</em></strong>: Pipelines are your way of managing deployments in a consistent, repeatable and safe way.</p>
+
+<p>I was talking about how important the process is, Pipelines are the Spinnaker means for defining processes explicitly. You can define different types of stages, from functions to manipulate infrastructure (deploy, resize, disable) and utility functions (manual judgement, wait, run a Job) with the goal of deploying an artifact to one of your environments.</p>
+
+<p><img src="https://res.cloudinary.com/dhilz8r88/image/upload/v1524073790/pipelines-ui.png" alt="Pipelines UI" /></p>
+
+<p>You can learn more about Pipelines here: <a href="https://www.spinnaker.io/concepts/pipelines/">https://www.spinnaker.io/concepts/pipelines/</a></p>
+
+<h2 id="spinnaker-concepts-abstractions-and-how-they-map-to-kubernetes">Spinnaker Concepts/Abstractions and how they map to Kubernetes</h2>
+
+<p><img src="https://res.cloudinary.com/dhilz8r88/image/upload/v1524077811/k8s-concepts.png" alt="Concepts" /></p>
+
+<p>One of the things I enjoy the most about Spinnaker is that it abstracts multiple elements of the infrastructure and deployment best practices, also how it maps those elements to the different cloud providers so you can keep a consistent mental model of your infrastructure. It supports a wide array of cloud infrastructure providers, among them:</p>
+
+<ul>
+<li>Google App Engine</li>
+<li>Amazon Web Services</li>
+<li>Azure</li>
+<li><strong><em>Kubernetes</em></strong></li>
+</ul>
+
+<p>And many more &hellip; <a href="https://www.spinnaker.io/concepts/providers">https://www.spinnaker.io/concepts/providers</a></p>
+
+<h3 id="server-groups">Server Groups</h3>
+
+<p>It is the base resource, represents a deployable artifact which is normally associated with configuration settings such number of instances, auto scaling policies, metadata, etc. This resource can be associated with a Load Balancer and a Security Group.</p>
+
+<p><strong><em>Kubernetes Server Groups</em></strong>: A server group maps to  kubernetes pods via <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">Replica Sets</a> or <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployments</a>. You can imagine how autoscaling and metadata from pods can be naturally match a server group definition.</p>
+
+<h3 id="cluster">Cluster</h3>
+
+<p>Clusters are logical groupings of Server Groups.</p>
+
+<p><strong><em>Kubernetes Cluster</em></strong>: A Spinnaker Cluster can optionally map to a Kubernetes <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment</a>.</p>
+
+<p>check more information about this mapping here: <a href="https://www.spinnaker.io/reference/providers/kubernetes/#cluster">https://www.spinnaker.io/reference/providers/kubernetes/#cluster</a></p>
+
+<h3 id="applications">Applications</h3>
+
+<p>Applications are logical groupings of Clusters in Spinnaker.</p>
+
+<p><strong><em>Kubernetes Applications</em></strong>: It doesn&rsquo;t have a direct mapping since it is a logical grouping inside Spinnaker.</p>
+
+<h3 id="load-balancer">Load Balancer</h3>
+
+<p>A Load Balancer is associated with an ingress protocol and a port range. It balances traffic among instances in its Server Groups.</p>
+
+<p><strong><em>Kubernetes Load Balancers</em></strong>: A Load Balancer maps to a Kubernetes <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a>.</p>
+
+<h3 id="security-group">Security Group</h3>
+
+<p>A Security Group defines network traffic access. It is effectively a set of firewall rules defined by an IP range, along with the communication protocol.</p>
+
+<p><strong><em>Kubernetes Security Groups</em></strong>: A security group maps to an Kubernetes <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a>, which manages external access to services in a cluster.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Continuous integration (CI) and Continuous Delivery (CD), are practices that can help you make your software delivery process better, by embracing automation, monitoring and constant quality improvement. In order to apply CI/CD effectively, you must select the right tools, but most importantly focus on a well defined process, once you have that process you can actually make it better  over time, which might give you a big advantage when trying to figure out your client needs, by providing them with quick improvements and features based on their needs quickly and with higher quality.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/k8s/">k8s</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/ci/cd/">CI/CD</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/spinnaker/">spinnaker</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/devops/">DevOps</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/post/chapi-go-toy-web-framework/" data-toggle="tooltip" data-placement="top" title="Chapi Go Toy Web Framework">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/post/why-docker/" data-toggle="tooltip" data-placement="top" title="Why Docker">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

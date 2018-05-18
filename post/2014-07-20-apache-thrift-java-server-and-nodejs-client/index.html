@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Apache Thrift Java Server and NodeJS Client</title>
+  <meta property="og:title" content="Apache Thrift Java Server and NodeJS Client" />
+  <meta name="twitter:title" content="Apache Thrift Java Server and NodeJS Client" />
+  <meta name="description" content="As an exercise for learning Apache Thrift I&#8217;m writing a simple API for Apache Jackrabit 3 using this software framework developed by Facebook.  Apache Thrift is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.
+
+">
+  <meta property="og:description" content="As an exercise for learning Apache Thrift I&#8217;m writing a simple API for Apache Jackrabit 3 using this software framework developed by Facebook.  Apache Thrift is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.
+
+">
+  <meta name="twitter:description" content="As an exercise for learning Apache Thrift I&#8217;m writing a simple API for Apache Jackrabit 3 using this software framework developed by Facebook.  Apache Thrift is useful for writing cross-language …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/2014-07-20-apache-thrift-java-server-and-nodejs-client/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/2014-07-20-apache-thrift-java-server-and-nodejs-client/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Apache Thrift Java Server and NodeJS Client</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 21, 2014
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>As an exercise for learning <a title=" Apache Thrift" href="https://thrift.apache.org/" target="_blank">Apache Thrift</a> I&#8217;m writing a simple API for <a href="https://jackrabbit.apache.org/oak/" target="_blank">Apache Jackrabit 3</a> using this software framework developed by Facebook.  <a title=" Apache Thrift" href="https://thrift.apache.org/" target="_blank">Apache Thrift</a> is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.</p>
+
+<p></p>
+
+<p><a href="https://jackrabbit.apache.org/oak/" target="_blank">Apache Jackrabit 3</a> is an implementation of <a title="Java Content Repository" href="https://en.wikipedia.org/wiki/Content_repository_API_for_Java" target="_blank">Java Content Repository</a>  and for now it can only be used through It&#8217;s Java API (it also has a REST interface I haven&#8217;t used),  so the idea is to reproduce more or less the Jackrabbit 3 API more specifically the &#8220;Oak API&#8221; with <a title=" Apache Thrift" href="https://thrift.apache.org/" target="_blank">Apache Thrift</a> so it can be used on NodeJS.</p>
+
+<h2 id="thrift-java-server">Thrift Java Server</h2>
+
+<p><a href="https://github.com/ottogiron/jcr-oak-rpc/blob/development/jcr-oak-rpc-services/src/test/java/org/jumlabs/jcr/oak/rpc/api/JcrOakThritServerTests.java" target="_blank"><a href="https://github.com/ottogiron/jcr-oak-rpc/blob/development/jcr-oak-rpc-services/src/test/java/org/jumlabs/jcr/oak/rpc/api/JcrOakThritServerTests.java">https://github.com/ottogiron/jcr-oak-rpc/blob/development/jcr-oak-rpc-services/src/test/java/org/jumlabs/jcr/oak/rpc/api/JcrOakThritServerTests.java</a></a></p>
+
+<p>For the java server I have used _TNonblockingServerSocket transport  and binary protocol, _basically we have to register the available service processors, for this I have used <em>TMultiplexedProcessor.</em></p>
+
+<pre class="brush: java; title: ; notranslate" title="">@Test
+ public void testServerServe() throws TTransportException {
+    //simple(sessionProcesor);
+     TMultiplexedProcessor processor = new TMultiplexedProcessor();
+     processor.registerProcessor("TRootService", rootProcessor);
+     processor.registerProcessor("TTreeService", treeProcessor);
+      nonBlocking(processor);
+}
+
+public static void nonBlocking(TProcessor processor) throws TTransportException {
+        TNonblockingServerSocket serverTransport = new TNonblockingServerSocket(9090);
+        THsHaServer server = new THsHaServer(
+                new THsHaServer.Args(serverTransport)
+                .processor(processor)
+                .protocolFactory(new TBinaryProtocol.Factory(false, false)));
+        System.out.println("Starting server on port 9090 ...");
+        server.serve();
+    }
+</pre>
+
+<h2 id="thrift-javascript-client">Thrift JavaScript Client</h2>
+
+<p><a href="https://github.com/ottogiron/jcr-oak-rpc-nodejs/blob/master/test/jcr-oak-rpc-api-nodejs_test.js" target="_blank"><a href="https://github.com/ottogiron/jcr-oak-rpc/blob/development/nodejs/jcr-oak-api/test/jcr-oak-rpc-api-nodejs_test.js">https://github.com/ottogiron/jcr-oak-rpc/blob/development/nodejs/jcr-oak-api/test/jcr-oak-rpc-api-nodejs_test.js</a></a></p>
+
+<p>After running our server, we can consume the registered services.</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">testJcrOakClient: function(test) {
+
+        var connection = thrift.createConnection('localhost', 9090, {transport: thrift.TFramedTransport}),
+        multiplexer = new  thrift.Multiplexer(),
+        root =  multiplexer.createClient('TRootService',TRoot,connection);        
+
+        connection.on('error', function(err) {
+            console.error(err);
+            test.done();
+        });
+        var path = "/";
+        root.getTree(path, function(error, tree) {
+            if (error) {
+                console.log(error);
+            } else {
+                test.ok(tree, 'Session has not returned a result');
+                test.equal(tree.path, path, 'The path of the tree should be equal the required path /');
+                console.log(tree);
+                connection.end();
+            }
+
+            test.done();
+        });
+
+    }
+
+</pre>
+
+<p>Please be aware that I&#8217;m using the master branch of Apache Thrift, &#8220;Multiplexer processor&#8221; is not available in 0.9.x branch for NodeJS. The multiplexer allows to register and consume more than one service on a server, otherwise you&#8217;ll need a server for each service.</p>
+
+<p>All the code is available on GitHub</p>
+
+<p><a href="https://github.com/ottogiron/jcr-oak-rpc">https://github.com/ottogiron/jcr-oak-rpc</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/apache-jackrabbit/">apache jackrabbit</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/apache-thrift/">apache thrift</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/java/">java</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/javascript/">javascript</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/post/2015-03-07-web-components/" data-toggle="tooltip" data-placement="top" title="Web Components">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

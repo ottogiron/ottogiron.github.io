@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Chapi Go Toy Web Framework</title>
+  <meta property="og:title" content="Chapi Go Toy Web Framework" />
+  <meta name="twitter:title" content="Chapi Go Toy Web Framework" />
+  <meta name="description" content="On my quest of learning I heard about this relatively new language called go. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: Programing in go
+
+">
+  <meta property="og:description" content="On my quest of learning I heard about this relatively new language called go. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: Programing in go
+
+">
+  <meta name="twitter:description" content="On my quest of learning I heard about this relatively new language called go. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/chapi-go-toy-web-framework/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/chapi-go-toy-web-framework/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Chapi Go Toy Web Framework</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 23, 2015
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>On my quest of learning I heard about this relatively new language called <a href="https://golang.org/">go</a>. I don&rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&hellip; I also read the first chapters of this book: <a href="https://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639">Programing in go</a></p>
+
+<p></p>
+
+<p>My first thought was to write a simple REST API but since I&rsquo;ve been working with Node <a href="https://hapijs.com/">hapijs</a>  lately I wondered if I could write a super simple framework inspired in the <a href="https://hapijs.com/">hapijs</a> plugin system which I really like.</p>
+
+<h2 id="chapi">Chapi</h2>
+
+<p>So <a href="https://github.com/ottogiron/chapi">Chapi</a> is a Toy Web Framework inspired in <a href="https://hapijs.com/">hapijs</a> (Almost chappie), so it basically implements a simple plugin system, routes using the <a href="https://www.gorillatoolkit.org/pkg/mux">gorilla mux</a>, and a server using <a href="https://github.com/codegangsta/negroni">negroni</a>.</p>
+
+<div style="text-align:center">
+<img  src="https://res.cloudinary.com/dhilz8r88/image/upload/c_scale,w_400/v1450930257/ottogironme/chappie-window-sticker.jpg">
+</div>
+
+<h3 id="chapi-server">Chapi Server</h3>
+
+<p><strong>github.com/ottogiron/chapi/server.Sever</strong></p>
+
+<p>Chapi server allows you to easily create an http server, define routes, and register plugins.</p>
+
+<p>Creating a simple server:</p>
+
+<pre><code class="language-go">connectionString := &quot;:8080&quot;
+s := server.NewServer()
+err := s.Run(connectionString)
+if err != nil {
+  fmt.Println(&quot;Error when running server&quot;, err)
+}
+</code></pre>
+
+<h3 id="chapi-plugin">Chapi Plugin</h3>
+
+<p><strong>github.com/ottogiron/chapi/server.BasePlugin</strong></p>
+
+<p>Chapi implements a plugin systems which allows you to break your logic in multiple reusable pieces.</p>
+
+<h4 id="plugin-definition">Plugin Definition</h4>
+
+<p>This is how you define a plugin:</p>
+
+<pre><code class="language-go">type MyPlugin struct {
+    *server.BasePlugin
+}
+
+//Here you'll recieve a server reference
+func (p *MyPlugin) Register(s server.Server) {
+
+}
+
+//Unique plugin name (Optional)
+func (p *MyPlugin) Name() string {
+    return &quot;MyPlugin&quot;
+}
+
+//Array of plugins that should run before this one(Optional)
+func (p *MyPlugin) Dependencies() []string {
+    return []string{&quot;SomeDependencyPluginName&quot;}
+}
+</code></pre>
+
+<h4 id="registering-a-plugin">Registering a plugin</h4>
+
+<p>Assuming you&rsquo;ve already initialized a server &laquo;s&raquo;</p>
+
+<pre><code class="language-go">s.Register(&amp;MyPlugin{})
+</code></pre>
+
+<h3 id="chapi-routes">Chapi Routes</h3>
+
+<p>You can register route handlers using Chapi Server. It uses the same route syntax of <a href="https://www.gorillatoolkit.org/pkg/mux">gorilla mux</a></p>
+
+<pre><code class="language-go">s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<ul>
+<li><a href="https://golang.org/">go</a> =&gt; 1.5</li>
+</ul>
+
+<h4 id="creating-a-simple-server">Creating a simple server</h4>
+
+<p>Get Chapi:</p>
+
+<pre><code>go get github.com/ottogiron/chapi
+</code></pre>
+
+<p>Create a new directory:</p>
+
+<pre><code>mkdir $GOPATH/src/chapi-example
+cd chapi-example
+</code></pre>
+
+<p>Create a new file called main.go and paste this:</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+
+	&quot;github.com/ottogiron/chapi/server&quot;
+)
+
+func main() {
+
+	connectionString := &quot;:8080&quot;
+	s := server.NewServer()
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Run the server:</p>
+
+<pre><code>go run main.go
+</code></pre>
+
+<p>Go to <a href="https://localhost:8080">https://localhost:8080</a>. You should see something like this:</p>
+
+<pre><code>404 page not found
+</code></pre>
+
+<p>So don&rsquo;t worry everything is fine. The server is running on port 8080 but we still need to define a route to handle the root &laquo;/&raquo; path.</p>
+
+<h4 id="creating-a-controller-plugin-to-handle-the-root-path">Creating a controller plugin to handle the root path.</h4>
+
+<p>Add this after the import statement</p>
+
+<pre><code class="language-go">type HelloController struct {
+	*server.BasePlugin
+}
+
+func (c *HelloController) Register(s server.Server) {
+	s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+}
+
+func handleHello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, &quot;!!!Hello Chapi&quot;)
+}
+</code></pre>
+
+<p>Register HelloController Plugin:</p>
+
+<pre><code class="language-go">func main() {
+
+	connectionString := &quot;:8000&quot;
+	s := server.NewServer()
+	s.Register(&amp;HelloController{})
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Your final main.go should look something like this:</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;net/http&quot;
+
+	&quot;github.com/ottogiron/chapi/server&quot;
+)
+
+type HelloController struct {
+	*server.BasePlugin
+}
+
+func (c *HelloController) Register(s server.Server) {
+	s.HandleFunc(&quot;/&quot;, handleHello).Methods(&quot;GET&quot;)
+}
+
+func handleHello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, &quot;!!!Hello Chapi&quot;)
+}
+
+func main() {
+
+	connectionString := &quot;:8000&quot;
+	s := server.NewServer()
+	s.Register(&amp;HelloController{})
+	err := s.Run(connectionString)
+	if err != nil {
+		fmt.Println(&quot;Error when running server&quot;, err)
+	}
+
+}
+</code></pre>
+
+<p>Restart the server:</p>
+
+<p>press ctrl + c</p>
+
+<p>&hellip; and run it again:</p>
+
+<pre><code>go run main.go
+</code></pre>
+
+<p>Go to <a href="https://localhost:8080">https://localhost:8080</a>, you&rsquo;ll see something like this:</p>
+
+<pre><code>!!!Hello Chapi
+</code></pre>
+
+<h2 id="a-toy-web-framework">A Toy Web Framework ?</h2>
+
+<p>This is my first piece of go code, it doesn&rsquo;t have unit testing and it isn&rsquo;t the best example of go code style. At this point I have written some others tools using the language and I&rsquo;m still learning. Hopefully I&rsquo;ll find the time to get back to this project and improve it at some point.</p>
+
+<p><strong>The code for this example is available on github:</strong> <a href="https://github.com/ottogiron/chapi-example">https://github.com/ottogiron/chapi-example</a></p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/golang/">golang</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/post/terraform-digital-ocean/" data-toggle="tooltip" data-placement="top" title="Using Terraform with DigitalOcean">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/post/continuos-delivery-spinnaker-k8s/" data-toggle="tooltip" data-placement="top" title="Continuos delivery, Spinnaker, and Kubernetes">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

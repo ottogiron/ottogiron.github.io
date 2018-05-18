@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Waterline: Node.js adapter-based ORM</title>
+  <meta property="og:title" content="Waterline: Node.js adapter-based ORM" />
+  <meta name="twitter:title" content="Waterline: Node.js adapter-based ORM" />
+  <meta name="description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.
+
+">
+  <meta property="og:description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.
+
+">
+  <meta name="twitter:description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/2015-03-16-waterline-node-js-adapter-based-orm/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/2015-03-16-waterline-node-js-adapter-based-orm/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Waterline: Node.js adapter-based ORM</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on March 16, 2015
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><a href="https://github.com/balderdashy/waterline">Waterline</a> is an ORM/ODM (Object Document Mapper), part of the <a href="https://sailsjs.org">Sails Framework</a>.</p>
+
+<p>Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.</p>
+
+<p></p>
+
+<h3 id="pros">Pros</h3>
+
+<h4 id="standardized-data-access-interface">Standardized Data Access Interface</h4>
+
+<p>In a project is always necessary to have a set of standards or architectural guidelines that the developers can follow, so they can focus on business logic. As developers thinking one from many ways of doing a something adds mental load and it makes us waste time. Also depending in our experience, we may end up writing a lot of boilerplate code that might not be even modular and reusable.</p>
+
+<p>Waterline provides a common language the developers can agree on, it also reduces the boilerplate code implementing common database operations.</p>
+
+<h4 id="flexibility">Flexibility</h4>
+
+<p>Imagine that you are working in a project using let&#8217;s say Mongo. Then you realize that the company has no previous experience with Mongo, they have invested time and resources in MySQL and they want to stick to that. You have already invested a couple of weeks developing a prototype using Waterline. No problem! since you&#8217;re using Waterline you just need to change a couple of configuration lines.</p>
+
+<h4 id="adapters">Adapters</h4>
+
+<p>An adapter is an interface that maps methods like find() and create() to lower level syntax like &#8220;SELECT * FROM&#8221; and &#8220;INSERT INTO&#8221;. Sails core team maintains a set of adapters for the most popular databases. A great thing is that you can also contribute with your own adapters, or the existing ones.</p>
+
+<h3 id="cons">Cons</h3>
+
+<h4 id="maturity-or-availability-of-adapters">Maturity Or Availability Of Adapters</h4>
+
+<p>For some databases adapters might be at early stages, or nonexistent. The good thing is that you can implement your own adapter or contribute existing ones. Right now I&#8217;m working on an adapter for Elasticsearch <a href="https://github.com/ottogiron/sails-elasticsearch">https://github.com/ottogiron/sails-elasticsearch</a></p>
+
+<h3 id="example">Example</h3>
+
+<pre class="brush: jscript; title: ; notranslate" title="">var waterline = require('waterline');
+
+// Instantiate a new instance of the ORM
+var orm = new Waterline();
+
+var config = {
+adapters: {
+mysql: require('sails-mysql')
+},
+
+connections: {
+myLocalMySql: {
+adapter: 'mysql'
+host: 'localhost',
+database: 'test'
+}
+}
+};
+
+var User = Waterline.Collection.extend({
+identity: 'user',
+connection: 'mysql',
+attributes: {
+first_name: 'string',
+last_name: 'string'
+}
+
+})
+
+//Load the models
+orm.looadCollection(User);
+
+// Start Waterline passing adapters in
+orm.initialize(config, function(err, models) {
+models.user
+.find({first_name: 'something'})
+.execute(function(err, result){
+// do something
+});
+})
+
+</pre>
+
+<p>Find additional examples on how to map models and using them here: <a href="https://sailsjs.org/#!/documentation/concepts/ORM">https://sailsjs.org/#!/documentation/concepts/ORM</a></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>With Waterline you can create an abstraction of different databases, reducing the boilerplate code for common operations, and giving the developers a common data access language they can work with, letting them focus in the business logic.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/javascript/">javascript</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/nodejs/">nodejs</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/sails/">sails</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/waterline/">waterline</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/post/2015-03-08-weasel-node-js-waterline-simple-mocking-library/" data-toggle="tooltip" data-placement="top" title="Weaselpecker: Node.js- Waterline Simple Mocking Library">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/post/2015-03-22-setting-up-your-node-js-unit-tests-with-chai-and-mocha/" data-toggle="tooltip" data-placement="top" title="Setting Up your Node.js Unit Tests with Chai And Mocha">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

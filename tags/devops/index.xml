@@ -7,7 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <copyright>(c) 2018 Otto Giron.</copyright>
     <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.me/tags/devops/index.xml" rel="self" type="application/rss+xml" />
@@ -15,10 +14,10 @@
     
     <item>
       <title>Continuos delivery, Spinnaker, and Kubernetes</title>
-      <link>https://ottogiron.me/2018/04/18/continuos-delivery-spinnaker-and-kubernetes/</link>
+      <link>https://ottogiron.me/post/continuos-delivery-spinnaker-k8s/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/2018/04/18/continuos-delivery-spinnaker-and-kubernetes/</guid>
+      <guid>https://ottogiron.me/post/continuos-delivery-spinnaker-k8s/</guid>
       <description>&lt;p&gt;Continuous delivery is a hot topic these days, mostly because of the DevOps movement which aims to improve collaboration among different people involved in the process of software delivery, by embracing automation and constant communication.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -26,10 +25,10 @@
     
     <item>
       <title>Using Terraform with DigitalOcean</title>
-      <link>https://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</link>
+      <link>https://ottogiron.me/post/terraform-digital-ocean/</link>
       <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/2015/12/15/using-terraform-with-digitalocean/</guid>
+      <guid>https://ottogiron.me/post/terraform-digital-ocean/</guid>
       <description>&lt;p&gt;In this post I&amp;rsquo;m going to use &lt;a href=&#34;https://terraform.io/&#34;&gt;Terraform&lt;/a&gt; to define and launch a &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; server and a DNS &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;DigitalOcean&lt;/a&gt; A Record.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

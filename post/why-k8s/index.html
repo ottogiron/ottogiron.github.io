@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Why Kubernetes</title>
+  <meta property="og:title" content="Why Kubernetes" />
+  <meta name="twitter:title" content="Why Kubernetes" />
+  <meta name="description" content="Deployment, scaling, monitoring, service discovery, configuration, we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to have a sustainable infrastructure for implementing software which is able to support increasing levels of success.
+There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view.">
+  <meta property="og:description" content="Deployment, scaling, monitoring, service discovery, configuration, we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to have a sustainable infrastructure for implementing software which is able to support increasing levels of success.
+There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view.">
+  <meta name="twitter:description" content="Deployment, scaling, monitoring, service discovery, configuration, we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to have a …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/post/why-k8s/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/post/why-k8s/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-71498851-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Why Kubernetes</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 16, 2018
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Deployment, scaling, monitoring, service discovery, configuration,  we may or not be aware of such problems when we start but we definitely have to find a solution for them if we want to  have a sustainable infrastructure for implementing software which is able to support increasing levels of success.</p>
+
+<p>There are many approaches to tackle the aforementioned situation, and a good first step is to standardize the application representation from the infrastructure point of view. What I mean with that is: &laquo;An application is an application independently of the underlying technology in which it was implemented&raquo; Docker is useful for that since it provides a nice abstraction of what represents an application, I exposed my thoughts on that topic here <a href="https://ottogiron.me/2018/04/25/why-docker/">Why Docker</a>.</p>
+
+<p>At some point, applications are ready for deployment, for that we need infrastructure (hosts), at the same time we need an architecture to support deployment. A basic infrastructure architecture might look something like this:</p>
+
+<p><img src="https://res.cloudinary.com/dhilz8r88/image/upload/v1525123943/ottogironme/basic-infrastructure-architecture.png" alt="Basic infrastructure Architecture" />.</p>
+
+<p>There are many ways in which we can scale the above infrastructure, but levels of complexity for management and deployment can grow depending what solution we pick.</p>
+
+<p>Kubernetes (shorten as <strong><em>k8s</em></strong>)  is a tool for automating deployment, scaling and management of containers across clusters of hosts. It creates an abstraction on top of those clusters, so you can visualize them as a single resource. Container operations (deployment, scaling, etc.) on top the kubernetes cluster are performed using the API, internally kubernetes performs the necessary operations to schedule the container in a host which is run  based on several parameters such resources availability on the different hosts of the cluster.</p>
+
+<p>One of the biggest advantage of using kuberentes is its declarative approach for defining and managing containers/applications state (for example: number of instances). You define a YAML or JSON file with the desired state, call the API to define or update that state, and the necessary actions for that to be a reality are performed internally. I will explain a little more about that later.</p>
+
+<h2 id="kubernetes-concepts">Kubernetes Concepts</h2>
+
+<h3 id="api-server">API Server</h3>
+
+<p>The API Server is the interface you will use for defining the state of the cluster. Internally the API stores the desired state in the highly available data store <a href="https://coreos.com/etcd/">etcd</a>, actions to reach the desired state are performed by controllers.</p>
+
+<h3 id="controllers">Controllers</h3>
+
+<p>After you have defined the desired state for the cluster, controllers are in charge to match that  state in the cluster.</p>
+
+<p>Standard out of the book controllers are <a href="https://kubernetes.io/docs/reference/generated/kube-controller-manager/">kube-controller-manager</a> and <a href="https://kubernetes.io/docs/concepts/overview/components/#cloud-controller-manager">cloud-controller-manager</a>.</p>
+
+<p>From the kubernetes documentation: <em>For simplicity you can think of this as te following</em></p>
+
+<pre><code>1. What is the current state of the cluster (X)?
+2. What is the desired state of the cluster (Y)?
+3. X == Y ?
+   true - Do nothing.
+   false - Perform tasks to get to Y (such as starting or restarting containers, or scaling the number of replicas of a given application).
+(Return to 1)
+</code></pre>
+
+<h3 id="kubernetes-objects">Kubernetes Objects</h3>
+
+<p>The basic kubernentes objects are:</p>
+
+<ul>
+<li>Pod</li>
+<li>Service</li>
+<li>Volume</li>
+<li>Namespace</li>
+<li>Ingress</li>
+</ul>
+
+<p>These are some of the basic object but there are many more.</p>
+
+<h4 id="pod">Pod</h4>
+
+<p>A pod is a set of containers with shared storage/network. Containers within a pod share IP address and port space, and can find each other via localhost. You can think of them as many process running in the same OS.</p>
+
+<p>There are interesting applications for pods (besides just serving or running a single application), for example &laquo;Sidecar Containers&raquo; which enhances the functionality of the main container. An example I created is a  Pod with <a href="https://gohugo.io/">Hugo Static Site Framework</a>. The pod contains 3 containers which share a common files volume, <a href="https://github.com/kubernetes/git-sync">git-sync</a> keeps the master branch of the site up to date, <a href="https://hub.docker.com/r/ottogiron/hugo/">ottogiron/hugo</a> regenerates the site when new changes are found, and an standard nginx image serves the generated static content. You can check an example here: <a href="https://github.com/ottogiron/hugo-k8s-test">https://github.com/ottogiron/hugo-k8s-test</a>.</p>
+
+<p>Some other applications are described here <a href="https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/">https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/</a></p>
+
+<h4 id="service">Service</h4>
+
+<p>Pods are created dynamically and have a limited lifespan, that is how it&rsquo;s meant to be, because you can scale them or destroy them on demand.</p>
+
+<p>Here comes the <em>Service</em>. Services are an abstraction which defines a set of <em>Pods</em> to access them, you can also think of it as what we call a microservice.</p>
+
+<h4 id="volume">Volume</h4>
+
+<p>Files on containers are ephemeral, what that means is if a container (inside a pod) is destroyed, all the files will be destroyed as well.</p>
+
+<p>Volumes allows us to define a file system volume with an explicit lifetime from an explicit source using <em>volumes types</em>, for example a distributed file system such <em>nfs</em> or a cloud <em>AWS</em> or GCP <em>bucket</em>. Implementation of volume sources is based on plugins, so there are some interesting implementations such gitRepo. You can check available types <a href="https://kubernetes.io/docs/concepts/storage/volumes/">here</a></p>
+
+<h4 id="namespaces">Namespaces</h4>
+
+<p>Namespaces are intended for use in environments with many users spread across multiple teams, or projects. When you first create a cluster by default there is an pre existing namespace called &laquo;default&raquo;.</p>
+
+<h4 id="ingress">Ingress</h4>
+
+<p>By default services in a cluster are not accessible from the outside, you must explicitly expose them. There are many ways of achieving that. Ingress is a collection of rules that allow inbound connections to reach the cluster services, you can think of them  as something such NGINX which allows you to define different rules for accessing the available services.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When we create a new application,  implicitly there are many things we need to take into account in order expose it as a service for our end users, and not only that, also to make sure it meets the quality standards to be successful. Networking, load balancing, security, monitoring, orchestration, service discovery are some of the most important topics. Kubernetes already takes into account and solves many of our problems letting us focus on what is important which is implementing a great product.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/kubernetes/">kubernetes</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/docker/">docker</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/post/why-docker/" data-toggle="tooltip" data-placement="top" title="Why Docker">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
