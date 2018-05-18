@@ -1,223 +1,187 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Waterline: Node.js adapter-based ORM  &middot; Polyglott</title>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Waterline: Node.js adapter-based ORM</title>
+  <meta property="og:title" content="Waterline: Node.js adapter-based ORM" />
+  <meta name="twitter:title" content="Waterline: Node.js adapter-based ORM" />
+  <meta name="description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.
+
+">
+  <meta property="og:description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.
+
+">
+  <meta name="twitter:description" content="Waterline is an ORM/ODM (Object Document Mapper), part of the Sails Framework.
+
+Waterline is agnostic of the data store so it allows you to map different types of databases to a common model …">
+  <meta name="author" content="Otto Giron"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polyglott" />
+
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="canonical" href="https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/" />
+  <link rel="alternate" href="https://ottogiron.me/index.xml" type="application/rss+xml" title="Polyglott">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ottogiron.me/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ottogiron.me/css/syntax.css" /><link rel="stylesheet" href="https://ottogiron.me/css/codeblock.css" />
 
 
-<meta name="description" content="" />
 
-<meta name="keywords" content="javascript, nodejs, sails, waterline, ">
-
-
-<meta property="og:title" content="Waterline: Node.js adapter-based ORM  &middot; Polyglott ">
-<meta property="og:site_name" content="Polyglott"/>
-<meta property="og:url" content="https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/" />
-<meta property="og:locale" content="en-EN">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
-<meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2015-03-16T00:00:00Z" />
-<meta property="og:article:modified_time" content="2015-03-16T00:00:00Z" />
 
-  
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
     
-<meta property="og:article:tag" content="javascript">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
     
-<meta property="og:article:tag" content="nodejs">
-    
-<meta property="og:article:tag" content="sails">
-    
-<meta property="og:article:tag" content="waterline">
-    
-  
-
-  
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@hottroth" />
-<meta name="twitter:creator" content="@hottroth" />
-<meta name="twitter:title" content="Waterline: Node.js adapter-based ORM" />
-<meta name="twitter:description" content="" />
-<meta name="twitter:url" content="https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/" />
-<meta name="twitter:domain" content="https://ottogiron.me/">
-  
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "Waterline: Node.js adapter-based ORM",
-    "author": {
-      "@type": "Person",
-      "name": "http://profiles.google.com/+?rel=author"
-    },
-    "datePublished": "2015-03-16",
-    "description": "",
-    "wordCount": 438
-  }
-</script>
-
-
-
-<link rel="canonical" href="https://ottogiron.me/2015/03/16/waterline-node.js-adapter-based-orm/" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ottogiron.me/touch-icon-144-precomposed.png">
-<link href="https://ottogiron.me/favicon.png" rel="icon">
-
-<meta name="generator" content="Hugo 0.40.3" />
-
-  
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://ottogiron.me/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://ottogiron.me/css/style.css">
-<link rel="stylesheet" href="https://ottogiron.me/css/highlight/default.css">
-
-  
-  
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-71498851-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
 
 </head>
-<body>
-  <main id="main-wrapper" class="container main_wrapper has-sidebar">
-    <header id="main-header" class="container main_header">
-  <div class="container brand">
-  <div class="container title h1-like">
-  <a class="baselink" href="https://ottogiron.me/">
-  Polyglott
 
-</a>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ottogiron.me/">Polyglott</a>
+    </div>
 
-</div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
 
-  
-<div class="container topline">
-  
-  About today
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/es" lang="es">es</a>
+                
+              
+            </li>
+          
+        
 
+        
+      </ul>
+    </div>
 
-</div>
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
 
-
-</div>
-
-  <nav class="container nav primary no-print">
-  
-
-<a class="homelink" href="https://ottogiron.me/">Home</a>
-
-
-  
-<a href="https://ottogiron.me/about">About</a>
-
-<a href="https://ottogiron.me/categories" title="Show Categories">Categories</a>
-
-<a href="https://ottogiron.me/post" title="Show list of posts">Posts</a>
-
-<a href="https://ottogiron.me/tags" title="Show list of tags">Tags</a>
-
-
+  </div>
 </nav>
 
-<div class="container nav secondary no-print">
+
+
+
+    
   
-<a id="contact-link-email" class="contact_link" href="mailto:ottog2486@gmail.com">
-  <span class="fa fa-envelope-square"></span><span>email</span></a>
+  
+  
 
 
-
-<a id="contact-link-github" class="contact_link" href="https://github.com/ottogiron">
-  <span class="fa fa-github-square"></span><span>github</span></a>
-
-
-
-
-
-
-
-
-
-<a id="contact-link-facebook" class="contact_link" href="https://www.facebook.com/otto.giron">
-  <span class="fa fa-facebook-square"></span><span>facebook</span></a>
-
-
-
-<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/hottroth">
-  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 
   
 
-</header>
-
-
-<article id="main-content" class="container main_content single">
-  <header class="container hat">
-  <h1>Waterline: Node.js adapter-based ORM
-</h1>
-
-  <div class="metas">
-<time datetime="2015-03-16">16 Mar, 2015</time>
-
-
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Waterline: Node.js adapter-based ORM</h1>
+                
+                
+                  <span class="post-meta">
   
-    &middot; by Otto Giron
   
-  &middot; Read in about 3 min
-  &middot; (438 Words)
-  <br>
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on March 16, 2015
   
-<a class="label" href="https://ottogiron.me/tags/javascript">javascript</a>
-
-<a class="label" href="https://ottogiron.me/tags/nodejs">nodejs</a>
-
-<a class="label" href="https://ottogiron.me/tags/sails">sails</a>
-
-<a class="label" href="https://ottogiron.me/tags/waterline">waterline</a>
+  
+  
+</span>
 
 
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-</div>
 
-</header>
-
-  <div class="container content">
-  <p><a href="https://github.com/balderdashy/waterline">Waterline</a> is an ORM/ODM (Object Document Mapper), part of the <a href="https://sailsjs.org">Sails Framework</a>.</p>
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><a href="https://github.com/balderdashy/waterline">Waterline</a> is an ORM/ODM (Object Document Mapper), part of the <a href="https://sailsjs.org">Sails Framework</a>.</p>
 
 <p>Waterline is agnostic of the data store so it allows you to map different types of databases to a common model structure, focusing on business logic for CURD operations, querying records and models relations mapping.</p>
 
@@ -295,111 +259,101 @@ models.user
 <h3 id="conclusion">Conclusion</h3>
 
 <p>With Waterline you can create an abstraction of different databases, reducing the boilerplate code for common operations, and giving the developers a common data access language they can work with, letting them focus in the business logic.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ottogiron.me//tags/javascript/">javascript</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/nodejs/">nodejs</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/sails/">sails</a>&nbsp;
+            
+              <a href="https://ottogiron.me//tags/waterline/">waterline</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ottogiron.me/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/" data-toggle="tooltip" data-placement="top" title="Weaselpecker: Node.js- Waterline Simple Mocking Library">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ottogiron.me/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/" data-toggle="tooltip" data-placement="top" title="Setting Up your Node.js Unit Tests with Chai And Mocha">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
 </div>
 
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ottog2486@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Otto Giron
+            
+          
 
-  <footer class="container">
-  <div class="container navigation no-print">
-  <h2>Navigation</h2>
-  
-  
+          &nbsp;&bull;&nbsp;
+          2018
 
-    
-    <a class="prev" href="https://ottogiron.me/2015/03/08/weaselpecker-node.js--waterline-simple-mocking-library/" title="Weaselpecker: Node.js- Waterline Simple Mocking Library">
-      Previous
-    </a>
-    
-
-    
-    <a class="next" href="https://ottogiron.me/2015/03/23/setting-up-your-node.js-unit-tests-with-chai-and-mocha/" title="Setting Up your Node.js Unit Tests with Chai And Mocha">
-      Next
-    </a>
-    
-
-  
-
-
-</div>
-
-  <div class="container comments">
-  <h2>Comments</h2>
-  
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  (function() {
-    
-    
-    if (window.location.hostname == "localhost")
-      return;
-
-    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
-    dsq.src = '//ottogironme.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-</div>
-
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ottogiron.me/">Polyglott</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
 
-</article>
-      <footer id="main-footer" class="container main_footer">
-  
-
-  <div class="container nav foot no-print">
-  
-
-  <a class="toplink" href="#">back to top</a>
-
-</div>
-
-  <div class="container credits">
-  
-<div class="container footline">
-  
-  code with <i class='fa fa-heart'></i>
-
-
-</div>
-
-
-  
-<div class="container copyright">
-  
-  &copy; 2018 Otto Giron.
-
-
-</div>
-
-
-</div>
-
-</footer>
-
-    </main>
-    
-<script type="text/javascript">
-  (function() {
-    
-    
-    if (window.location.hostname == "localhost")
-      return;
-
-    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
-    dsq.src = '//ottogironme.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ottogiron.me/js/load-photoswipe.js"></script>
 
 
 
-<script src="https://ottogiron.me/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
-    
+
   </body>
 </html>
 
