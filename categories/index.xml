@@ -7,12 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Sun, 08 Mar 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Css</title>
+      <title>CSS</title>
       <link>https://ottogiron.me/categories/css/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
@@ -21,20 +22,47 @@
     </item>
     
     <item>
-      <title>Devops</title>
+      <title>Continuos Integration and Delivery</title>
+      <link>https://ottogiron.me/categories/continuos-integration-and-delivery/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/continuos-integration-and-delivery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
       <link>https://ottogiron.me/categories/devops/</link>
-      <pubDate>Tue, 15 Dec 2015 21:25:39 -0600</pubDate>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://ottogiron.me/categories/golang/</link>
+      <title>Go</title>
+      <link>https://ottogiron.me/categories/go/</link>
       <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/categories/golang/</guid>
+      <guid>https://ottogiron.me/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://ottogiron.me/categories/html/</link>
+      <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infrastructure</title>
+      <link>https://ottogiron.me/categories/infrastructure/</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/infrastructure/</guid>
       <description></description>
     </item>
     
@@ -57,11 +85,38 @@
     </item>
     
     <item>
-      <title>Node.js</title>
-      <link>https://ottogiron.me/categories/node.js/</link>
+      <title>My Open Source Projects</title>
+      <link>https://ottogiron.me/categories/my-open-source-projects/</link>
+      <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/my-open-source-projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NodeJS</title>
+      <link>https://ottogiron.me/categories/nodejs/</link>
+      <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NodeJs</title>
+      <link>https://ottogiron.me/categories/nodejs/</link>
+      <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://ottogiron.me/categories/open-source/</link>
       <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/categories/node.js/</guid>
+      <guid>https://ottogiron.me/categories/open-source/</guid>
       <description></description>
     </item>
     
@@ -71,6 +126,15 @@
       <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/categories/programming-languages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming Languajes</title>
+      <link>https://ottogiron.me/categories/programming-languajes/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/categories/programming-languajes/</guid>
       <description></description>
     </item>
     

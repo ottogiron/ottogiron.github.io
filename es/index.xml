@@ -11,5 +11,14 @@
 	<atom:link href="https://ottogiron.me/es/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Sobre mí</title>
+      <link>https://ottogiron.me/es/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/es/about/</guid>
+      <description>He sido programador desde 2008 trabajando en todas las capas de desarrollo de software (Front End, Backe End e Infraestructura). Siempre trato de aprender cosas nuevas y evito limitarme a áreas específicas de conocimiento.</description>
+    </item>
+    
   </channel>
 </rss>

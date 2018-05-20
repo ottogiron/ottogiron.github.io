@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on Polyglott</title>
+    <link>https://ottogiron.me/categories/open-source/</link>
+    <description>Recent content in Open Source on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Thu, 06 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.me/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Weaselpecker v1.1.0 released and available on NPM</title>
+      <link>https://ottogiron.me/post/2015-08-05-weaselpecker-v1-1-0-released-and-available-on-npm/</link>
+      <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-08-05-weaselpecker-v1-1-0-released-and-available-on-npm/</guid>
+      <description>I few months ago I wrote a little module for mocking Waterline models, you can check my related post here &amp;#8220;Weaselpecker: Node.js- Waterline Simple Mocking Library&amp;#8221;.
+It seems the module was useful for some developers (which is great 😀 ) so I took a few hours to review my code and add a couple extra features.
+I&amp;#8217;ve released v1.1.0 which is available on NPM https://www.npmjs.com/package/weaselpecker.
+Installation
+npm install weaselpecker --save-dev  Examples here https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

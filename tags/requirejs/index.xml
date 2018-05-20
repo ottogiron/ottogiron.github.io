@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requirejs on Polyglott</title>
+    <link>https://ottogiron.me/tags/requirejs/</link>
+    <description>Recent content in Requirejs on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Sun, 10 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.me/tags/requirejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing your JavaScript Dependencies with RequireJS</title>
+      <link>https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://requirejs.org/&#34; target=&#34;_blank&#34;&gt;RequireJS&lt;/a&gt; is a module loader for JavaScript. RequiresJS is based on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asynchronous_module_definition&#34; target=&#34;_blank&#34;&gt;AMD&lt;/a&gt; (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you require or use a module, it will be retrieved asynchronously and cached at the time you need it, that improves performance since you don&amp;#8217;t need to load all your dependencies (JavaScript files) at the same time.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

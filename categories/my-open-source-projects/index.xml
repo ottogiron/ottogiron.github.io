@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Open Source Projects on Polyglott</title>
+    <link>https://ottogiron.me/categories/my-open-source-projects/</link>
+    <description>Recent content in My Open Source Projects on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Wed, 23 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.me/categories/my-open-source-projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chapi Go Toy Web Framework</title>
+      <link>https://ottogiron.me/post/chapi-go-toy-web-framework/</link>
+      <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/chapi-go-toy-web-framework/</guid>
+      <description>&lt;p&gt;On my quest of learning I heard about this relatively new language called &lt;a href=&#34;https://golang.org/&#34;&gt;go&lt;/a&gt;. I don&amp;rsquo;t remember well the details of why I had the desire of learning it, but as I normally do in order to learn a new language or tool, I write code to test the features and get an overview of what I can accomplish using it and&amp;hellip; I also read the first chapters of this book: &lt;a href=&#34;https://www.amazon.com/Programming-Go-Creating-Applications-Developers/dp/0321774639&#34;&gt;Programing in go&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Weaselpecker v1.1.0 released and available on NPM</title>
+      <link>https://ottogiron.me/post/2015-08-05-weaselpecker-v1-1-0-released-and-available-on-npm/</link>
+      <pubDate>Thu, 06 Aug 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-08-05-weaselpecker-v1-1-0-released-and-available-on-npm/</guid>
+      <description>I few months ago I wrote a little module for mocking Waterline models, you can check my related post here &amp;#8220;Weaselpecker: Node.js- Waterline Simple Mocking Library&amp;#8221;.
+It seems the module was useful for some developers (which is great 😀 ) so I took a few hours to review my code and add a couple extra features.
+I&amp;#8217;ve released v1.1.0 which is available on NPM https://www.npmjs.com/package/weaselpecker.
+Installation
+npm install weaselpecker --save-dev  Examples here https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

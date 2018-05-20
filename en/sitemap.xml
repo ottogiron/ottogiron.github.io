@@ -74,23 +74,33 @@
   
   <url>
     <loc>https://ottogiron.me/about/</loc>
-    <lastmod>2011-02-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://ottogiron.me/es/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ottogiron.me/about/"
+                />
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/apache-jackrabbit/</loc>
-    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.me/tags/css/</loc>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/apache-thrift/</loc>
-    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.me/categories/css/</loc>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ottogiron.me/categories/</loc>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -111,38 +121,32 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/ci/cd/</loc>
+    <loc>https://ottogiron.me/tags/cicd/</loc>
     <lastmod>2018-04-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/codecoverage/</loc>
+    <loc>https://ottogiron.me/categories/continuos-integration-and-delivery/</loc>
+    <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/tags/coverage/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/css/</loc>
-    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ottogiron.me/categories/css/</loc>
-    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.me/categories/devops/</loc>
+    <lastmod>2018-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ottogiron.me/tags/devops/</loc>
-    <lastmod>2018-04-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ottogiron.me/categories/devops/</loc>
-    <lastmod>2015-12-15T21:25:39-06:00</lastmod>
+    <lastmod>2018-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,13 +157,13 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/golang/</loc>
+    <loc>https://ottogiron.me/categories/go/</loc>
     <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/categories/golang/</loc>
+    <loc>https://ottogiron.me/tags/golang/</loc>
     <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -171,8 +175,26 @@
   </url>
   
   <url>
+    <loc>https://ottogiron.me/categories/html/</loc>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/categories/infrastructure/</loc>
+    <lastmod>2018-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ottogiron.me/tags/istanbul/</loc>
     <lastmod>2015-03-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/tags/jackrabbit/</loc>
+    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,19 +212,13 @@
   
   <url>
     <loc>https://ottogiron.me/tags/javascript/</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2015-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ottogiron.me/categories/javascript/</loc>
     <lastmod>2015-08-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ottogiron.me/tags/javasscript/</loc>
-    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -243,20 +259,32 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/node.js/</loc>
+    <loc>https://ottogiron.me/categories/my-open-source-projects/</loc>
+    <lastmod>2015-12-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/categories/nodejs/</loc>
+    <lastmod>2015-03-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/categories/nodejs/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/categories/node.js/</loc>
-    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.me/tags/nodejs/</loc>
+    <lastmod>2015-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/nodejs/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
+    <loc>https://ottogiron.me/categories/open-source/</loc>
+    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -289,6 +317,18 @@
   </url>
   
   <url>
+    <loc>https://ottogiron.me/categories/programming-languajes/</loc>
+    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/tags/requirejs/</loc>
+    <lastmod>2015-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ottogiron.me/tags/sails/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -302,7 +342,7 @@
   
   <url>
     <loc>https://ottogiron.me/tags/</loc>
-    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2015-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -317,7 +357,13 @@
   </url>
   
   <url>
-    <loc>https://ottogiron.me/tags/unit-testing/</loc>
+    <loc>https://ottogiron.me/tags/thrift/</loc>
+    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ottogiron.me/tags/unittesting/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

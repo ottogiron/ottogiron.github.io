@@ -7,10 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.me/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Managing your JavaScript Dependencies with RequireJS</title>
+      <link>https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-05-10-managing-your-javascript-dependencies-with-requirejs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://requirejs.org/&#34; target=&#34;_blank&#34;&gt;RequireJS&lt;/a&gt; is a module loader for JavaScript. RequiresJS is based on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asynchronous_module_definition&#34; target=&#34;_blank&#34;&gt;AMD&lt;/a&gt; (Asyncronous Module Definition) API specification, which provides a mechanism for defining and consuming modules. When you require or use a module, it will be retrieved asynchronously and cached at the time you need it, that improves performance since you don&amp;#8217;t need to load all your dependencies (JavaScript files) at the same time.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js Modeshape REST Client</title>
+      <link>https://ottogiron.me/post/2015-04-12-node-js-modeshape-rest-client/</link>
+      <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-04-12-node-js-modeshape-rest-client/</guid>
+      <description>&lt;h2 id=&#34;modeshape&#34;&gt;Modeshape&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://modeshape.jboss.org/&#34; target=&#34;_blank&#34;&gt;Modeshape&lt;/a&gt; is an hierarchical data store written in Java and is part of the &lt;a href=&#34;https://www.jboss.org&#34; target=&#34;_blank&#34;&gt;JBoss&lt;/a&gt; portfolio . ModeShape clients are based on  &lt;a href =&#34;https://www.jcp.org/en/jsr/detail?id=283&#34; target=&#34;_blank&#34;&gt;JSR 283&lt;/a&gt; also known as JCR (Java Content Repository). There&amp;#8217;s another popular implementation of JCR called &lt;a href=&#34;https://jackrabbit.apache.org/jcr/index.html&#34; title=&#34;Jackrabbit&#34; target=&#34;_blank&#34;&gt;Jackrabbit&lt;/a&gt;, part of the Apache Software Foundation.&lt;/p&gt;
+
+&lt;p&gt;Content Repositories such ModeShape are great for data organized in a tree like structure such Content Management Systems, Digital Assets Managers, Document Management Systems, Social Collaboration Systems etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Setting Up your Node.js Unit Tests with Chai And Mocha</title>

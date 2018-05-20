@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thrift on Polyglott</title>
+    <link>https://ottogiron.me/tags/thrift/</link>
+    <description>Recent content in Thrift on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.me/tags/thrift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache Thrift Java Server and NodeJS Client</title>
+      <link>https://ottogiron.me/post/2014-07-20-apache-thrift-java-server-and-nodejs-client/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2014-07-20-apache-thrift-java-server-and-nodejs-client/</guid>
+      <description>&lt;p&gt;As an exercise for learning &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; I&amp;#8217;m writing a simple API for &lt;a href=&#34;https://jackrabbit.apache.org/oak/&#34; target=&#34;_blank&#34;&gt;Apache Jackrabit 3&lt;/a&gt; using this software framework developed by Facebook.  &lt;a title=&#34; Apache Thrift&#34; href=&#34;https://thrift.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Thrift&lt;/a&gt; is useful for writing cross-language services for many languages such Java, Python, PHP, JavaScript and others.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

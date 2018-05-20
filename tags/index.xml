@@ -7,26 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
     <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
-    <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ottogiron.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Apache Jackrabbit</title>
-      <link>https://ottogiron.me/tags/apache-jackrabbit/</link>
-      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      <title>CSS</title>
+      <link>https://ottogiron.me/tags/css/</link>
+      <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/apache-jackrabbit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Apache Thrift</title>
-      <link>https://ottogiron.me/tags/apache-thrift/</link>
-      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
-      <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/apache-thrift/</guid>
+      <guid>https://ottogiron.me/tags/css/</guid>
       <description></description>
     </item>
     
@@ -40,36 +31,27 @@
     </item>
     
     <item>
-      <title>Ci/Cd</title>
-      <link>https://ottogiron.me/tags/ci/cd/</link>
+      <title>Cicd</title>
+      <link>https://ottogiron.me/tags/cicd/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/ci/cd/</guid>
+      <guid>https://ottogiron.me/tags/cicd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Codecoverage</title>
-      <link>https://ottogiron.me/tags/codecoverage/</link>
+      <title>Coverage</title>
+      <link>https://ottogiron.me/tags/coverage/</link>
       <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/codecoverage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Css</title>
-      <link>https://ottogiron.me/tags/css/</link>
-      <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
-      <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/css/</guid>
+      <guid>https://ottogiron.me/tags/coverage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Devops</title>
       <link>https://ottogiron.me/tags/devops/</link>
-      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/tags/devops/</guid>
       <description></description>
@@ -94,7 +76,7 @@
     </item>
     
     <item>
-      <title>Html</title>
+      <title>HTML</title>
       <link>https://ottogiron.me/tags/html/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
@@ -112,6 +94,15 @@
     </item>
     
     <item>
+      <title>Jackrabbit</title>
+      <link>https://ottogiron.me/tags/jackrabbit/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/tags/jackrabbit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java</title>
       <link>https://ottogiron.me/tags/java/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
@@ -123,18 +114,9 @@
     <item>
       <title>Javascript</title>
       <link>https://ottogiron.me/tags/javascript/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
       <guid>https://ottogiron.me/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javasscript</title>
-      <link>https://ottogiron.me/tags/javasscript/</link>
-      <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
-      <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/javasscript/</guid>
       <description></description>
     </item>
     
@@ -193,20 +175,20 @@
     </item>
     
     <item>
-      <title>Node.js</title>
-      <link>https://ottogiron.me/tags/node.js/</link>
+      <title>Nodejs</title>
+      <link>https://ottogiron.me/tags/nodejs/</link>
       <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/node.js/</guid>
+      <guid>https://ottogiron.me/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Nodejs</title>
-      <link>https://ottogiron.me/tags/nodejs/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Requirejs</title>
+      <link>https://ottogiron.me/tags/requirejs/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/nodejs/</guid>
+      <guid>https://ottogiron.me/tags/requirejs/</guid>
       <description></description>
     </item>
     
@@ -229,11 +211,20 @@
     </item>
     
     <item>
-      <title>Unit Testing</title>
-      <link>https://ottogiron.me/tags/unit-testing/</link>
+      <title>Thrift</title>
+      <link>https://ottogiron.me/tags/thrift/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/tags/thrift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unittesting</title>
+      <link>https://ottogiron.me/tags/unittesting/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>ottog2486@gmail.com (Otto Giron)</author>
-      <guid>https://ottogiron.me/tags/unit-testing/</guid>
+      <guid>https://ottogiron.me/tags/unittesting/</guid>
       <description></description>
     </item>
     

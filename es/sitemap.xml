@@ -33,6 +33,20 @@
   </url>
   
   <url>
+    <loc>https://ottogiron.me/es/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ottogiron.me/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://ottogiron.me/es/about/"
+                />
+  </url>
+  
+  <url>
     <loc>https://ottogiron.me/es/tags/</loc>
     <priority>0</priority>
     <xhtml:link

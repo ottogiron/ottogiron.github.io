@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Languajes on Polyglott</title>
+    <link>https://ottogiron.me/categories/programming-languajes/</link>
+    <description>Recent content in Programming Languajes on Polyglott</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ottog2486@gmail.com (Otto Giron)</managingEditor>
+    <webMaster>ottog2486@gmail.com (Otto Giron)</webMaster>
+    <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ottogiron.me/categories/programming-languajes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting Up your Node.js Unit Tests with Chai And Mocha</title>
+      <link>https://ottogiron.me/post/2015-03-22-setting-up-your-node-js-unit-tests-with-chai-and-mocha/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <author>ottog2486@gmail.com (Otto Giron)</author>
+      <guid>https://ottogiron.me/post/2015-03-22-setting-up-your-node-js-unit-tests-with-chai-and-mocha/</guid>
+      <description>&lt;p&gt;In this post I&amp;#8217;m going to list the steps for setting up a Node.js project with unit testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
